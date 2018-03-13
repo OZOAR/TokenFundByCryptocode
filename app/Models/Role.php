@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     public $table = 'roles';
+
+    const ADMIN_ROLE_ID = 1;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,12 +24,12 @@ class Role extends Model
     public $timestamps = false;
 
     /**
-     * Get the policy owner.
+     * Get the role owner.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function owner()
     {
-        return $this->belongsTo(\App\Models\User::class);
+        return $this->belongsTo(User::class);
     }
 }
