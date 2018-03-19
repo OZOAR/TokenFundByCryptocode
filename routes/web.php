@@ -27,9 +27,13 @@ $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::get('/dashboard', function () { // TODO remove test route
+    $this->get('/dashboard', function () { // TODO remove test route
         return view('welcome');
-    });
+    })->name('dashboard');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', function () {
+    return view('welcome');
+})->name('profile');
