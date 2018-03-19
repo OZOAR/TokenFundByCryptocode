@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'role_id', 'name', 'email', 'password'
     ];
 
     /**
@@ -26,4 +26,41 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get user's policy.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    /**
+     * Check if user has a role.
+     *
+     * @param string $role
+     *
+     * @return bool
+     */
+    public function hasRole($role = 'admin')
+    {
+        switch ($role) {
+            case 'admin':
+                return $this->isAdministrator();
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Check if user is administrator.
+     *
+     * @return bool
+     */
+    public function isAdministrator()
+    {
+        return $this->role->id === Role::ADMIN_ROLE_ID;
+    }
 }
