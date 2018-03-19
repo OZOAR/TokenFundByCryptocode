@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -26,4 +26,14 @@ $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
+Route::group(['middleware' => ['admin']], function () {
+    $this->get('/dashboard', function () { // TODO remove test route
+        return view('welcome');
+    })->name('dashboard');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', function () {
+    return view('welcome');
+})->name('profile');
