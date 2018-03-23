@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'TokenFund'),
+    'dashboard' => env('DASHBOARD_NAME', 'Dashboard'),
 
     /*
     |--------------------------------------------------------------------------
