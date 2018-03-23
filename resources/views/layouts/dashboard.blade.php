@@ -14,7 +14,7 @@
 
 <body class="nav-md">
 <div id="app">
-    <!-- Content here -->
+    @yield('content')
 </div>
 
 <script src="{{ asset('js/dashboard/dashboard.js') }}"></script>
