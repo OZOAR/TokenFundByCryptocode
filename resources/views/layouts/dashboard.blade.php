@@ -14,7 +14,17 @@
 
 <body class="nav-md">
 <div id="app">
-    @yield('content')
+    <div class="container body">
+        <div class="main_container">
+            @include('partials.dashboard.head')
+            @include('partials.dashboard.sidebar')
+            <!-- page content -->
+            <div class="right_col" role="main">
+                @yield('content')
+            </div>
+            <!-- /page content -->
+        </div>
+    </div>
 </div>
 
 <script src="{{ asset('js/dashboard/dashboard.js') }}"></script>
