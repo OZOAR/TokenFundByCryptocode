@@ -5,9 +5,8 @@
             <div class="nav toggle">
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
             </div>
-
             <ul class="nav navbar-nav navbar-right">
-                <li class="">
+                <li>
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                        aria-expanded="false">
                         <img src="images/img.jpg" alt="">John Doe
