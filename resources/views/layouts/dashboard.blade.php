@@ -16,8 +16,8 @@
     <title>{{ config('app.dashboard', 'Dashboard') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard/custom.min.css') }}" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -26,7 +26,7 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/custom.min.js') }}"></script>
+<script src="{{ asset('js/dashboard/dashboard.js') }}"></script>
+<script src="{{ asset('js/dashboard/custom.min.js') }}"></script>
 </body>
 </html>
