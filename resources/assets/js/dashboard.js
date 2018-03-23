@@ -5,11 +5,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+window.$ = window.jQuery = require('jquery');
 
-require('bootstrap/dist/js/bootstrap.min');
+require('bootstrap');
 require('fastclick/lib/fastclick');
-require('jquery-sparkline/jquery.sparkline.min');
+require('jquery-sparkline');
 
 window.moment = require('moment');
 require('bootstrap-daterangepicker/daterangepicker');
