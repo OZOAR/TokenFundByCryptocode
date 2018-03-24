@@ -3,7 +3,7 @@
         <div class="navbar nav_title" style="border: 0;">
             <!-- TODO change dashboard title -->
             <a href="{{ route('dashboard.index') }}" class="site_title">
-                <i class="fa fa-mortar-board"></i> <span>Dashboard</span>
+                <i class="fa fa-bitcoin"></i> <span>@lang('dashboard.title')</span>
             </a>
         </div>
 

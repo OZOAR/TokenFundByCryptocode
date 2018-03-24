@@ -9,6 +9,11 @@
                 <li>
                     @include('partials.dashboard.top_menu')
                 </li>
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        @include('partials.locale_reset')
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
