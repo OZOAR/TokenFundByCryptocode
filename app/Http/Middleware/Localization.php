@@ -7,8 +7,7 @@ use Closure, Session;
 class Localization
 {
     const LOCALE = 'locale';
-
-    protected $languages = ['en', 'ru'];
+    const LANGUAGES = ['ru', 'en'];
 
     /**
      * Handle an incoming request.
@@ -20,7 +19,7 @@ class Localization
     public function handle($request, Closure $next)
     {
         if (!Session::has(self::LOCALE)) {
-            Session::put(self::LOCALE, $request->getPreferredLanguage($this->languages));
+            Session::put(self::LOCALE, $request->getPreferredLanguage(self::LANGUAGES));
         }
 
         app()->setLocale(Session::get(self::LOCALE));
