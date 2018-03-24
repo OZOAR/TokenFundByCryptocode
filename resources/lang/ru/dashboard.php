@@ -4,8 +4,16 @@ return [
     'title' => 'Админ-панель',
 
     'auth' => [
-        'profile' => 'Профиль',
+        'profile' => [
+            'title' => 'Профиль',
+            'settings' => 'Настройки профиля',
+        ],
         'logout'  => 'Выйти',
+    ],
+
+    'roles' => [
+        'administrator' => 'Администратор',
+        'client' => 'Клиент'
     ],
 
     'sidebar' => [
