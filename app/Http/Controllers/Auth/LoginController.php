@@ -37,6 +37,6 @@ class LoginController extends Controller
      */
     public function redirectTo()
     {
-        return $this->guard()->user()->hasRole('admin') ? route('dashboard') : route('profile');
+        return $this->guard()->user()->hasRole('admin') ? route('dashboard.index') : route('profile');
     }
 }

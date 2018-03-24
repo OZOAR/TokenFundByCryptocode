@@ -10,6 +10,15 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "bootstrap": "^3.3.7",
+        "bootstrap-daterangepicker": "^2.1.30",
+        "chart.js": "^2.7.1",
+        "datejs": "^1.0.0-rc3",
+        "fastclick": "^1.0.6",
+        "flot": "^0.8.0-alpha",
+        "font-awesome": "^4.7.0",
+        "jquery-sparkline": "^2.4.0",
+        "moment": "^2.20.1",
         "axios": "^0.17",
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",

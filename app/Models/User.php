@@ -59,8 +59,18 @@ class User extends Authenticatable
      *
      * @return bool
      */
-    public function isAdministrator()
+    public function isAdministrator(): bool
     {
         return $this->role->id === Role::ADMIN_ROLE_ID;
+    }
+
+    /**
+     * Get name of the user.
+     *
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
     }
 }
