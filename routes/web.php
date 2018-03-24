@@ -28,8 +28,9 @@ $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::group(['middleware' => ['admin']], function () {
-    $this->get('/dashboard', 'Dashboard\DashboardController@index')->name('dashboard.index');
+Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () {
+    $this->get('/', 'Dashboard\DashboardController@index')->name('dashboard.index');
+    $this->get('/profile', 'Dashboard\ProfileController@showProfile')->name('dashboard.profile');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
