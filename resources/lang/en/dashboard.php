@@ -4,8 +4,16 @@ return [
     'title' => 'Dashboard',
 
     'auth' => [
-        'profile' => 'Profile',
+        'profile' => [
+            'title' => 'Profile',
+            'settings' => 'Profile settings',
+        ],
         'logout'  => 'Log out',
+    ],
+
+    'roles' => [
+        'administrator' => 'Administrator',
+        'client' => 'Client'
     ],
 
     'sidebar' => [

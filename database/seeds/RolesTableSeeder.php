@@ -4,7 +4,9 @@ use Illuminate\Database\Seeder;
 
 class RolesTableSeeder extends Seeder
 {
-    private $roles = ['Administrator', 'Client'];
+    private $roles = [
+        'administrator' => 'Administrator', 'client' => 'Client'
+    ];
 
     /**
      * Run the database seeds.
@@ -15,8 +17,8 @@ class RolesTableSeeder extends Seeder
     {
         DB::table('roles')->delete();
 
-        foreach ($this->roles as $role) {
-            App\Models\Role::create(['title' => $role]);
+        foreach ($this->roles as $slug => $title) {
+            App\Models\Role::create(['slug' => $slug, 'title' => $title]);
         }
     }
 }

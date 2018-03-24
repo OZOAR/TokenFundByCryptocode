@@ -73,4 +73,14 @@ class User extends Authenticatable
     {
         return $this->name;
     }
+
+    /**
+     * Get email of the user.
+     *
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
 }
