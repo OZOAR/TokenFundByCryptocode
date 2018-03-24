@@ -16,7 +16,7 @@ class Role extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
+        'slug', 'title',
     ];
     /**
      * @var bool
@@ -31,5 +31,25 @@ class Role extends Model
     public function owner()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get slug of the role.
+     *
+     * @return string
+     */
+    public function getSlugName(): string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Get title of the role.
+     *
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
     }
 }
