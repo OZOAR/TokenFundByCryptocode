@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
+$this->get('locale/reset', 'LocalizationController@changeLocale')->name('locale.reset');
+
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
