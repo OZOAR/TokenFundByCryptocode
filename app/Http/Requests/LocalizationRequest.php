@@ -19,19 +19,6 @@ class LocalizationRequest extends FormRequest
     }
 
     /**
-     * Get all of the input and files for the request.
-     *
-     * @param  array|mixed  $keys
-     * @return array
-     */
-    public function all($keys = null): array
-    {
-        return [
-            'lang' => $this->route()->parameter('lang')
-        ];
-    }
-
-    /**
      * Get the validation rules that apply to the request.
      *
      * @return array

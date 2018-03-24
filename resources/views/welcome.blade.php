@@ -78,7 +78,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel | <strong>{{ Session::get('locale') }}</strong>
+
+                    @include('partials.locale_reset')
                 </div>
 
                 <div class="links">

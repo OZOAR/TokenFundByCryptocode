@@ -11,13 +11,12 @@ class LocalizationController extends Controller
     /**
      * Change locale on the website for current session.
      *
-     * @param LocalizationRequest $request Validates input $lang before changing locale
-     * @param null $lang
+     * @param LocalizationRequest $request Validates input lang before changing locale
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function changeLocale(LocalizationRequest $request, $lang = null)
+    public function changeLocale(LocalizationRequest $request)
     {
-        Session::put(Localization::LOCALE, $lang);
+        Session::put(Localization::LOCALE, $request->input('lang'));
 
         return redirect()->back();
     }
