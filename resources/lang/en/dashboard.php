@@ -32,6 +32,10 @@ return [
         ],
     ],
 
+    'users' => [
+        'title' => 'Users'
+    ],
+
     'button' => [
         'submit' => 'Submit',
         'reset' => 'Reset',

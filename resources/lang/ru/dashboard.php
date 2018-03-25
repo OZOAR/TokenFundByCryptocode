@@ -19,13 +19,17 @@ return [
         'client' => 'Клиент'
     ],
 
+    'users' => [
+        'title' => 'Пользователи'
+    ],
+
     'sidebar' => [
         'menu' => [
             'home' => 'Главная',
             'users' => [
                 'index'    => 'Пользователи',
                 'manage'   => 'Управление',
-                'register' => 'Регистрация',
+                'register' => 'Зарегистрировать',
             ],
             'requests' => 'Запросы',
             'statistics' => 'Статистика',
