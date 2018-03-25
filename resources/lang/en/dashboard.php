@@ -7,6 +7,8 @@ return [
         'profile' => [
             'title' => 'Profile',
             'settings' => 'Profile settings',
+            'password' => 'Password',
+            'password_confirmation' => 'Password confirmation',
         ],
         'logout'  => 'Log out',
     ],
@@ -27,5 +29,10 @@ return [
             'requests' => 'Requests',
             'statistics' => 'Statistics',
         ],
+    ],
+
+    'button' => [
+        'submit' => 'Submit',
+        'reset' => 'Reset',
     ],
 ];
