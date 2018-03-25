@@ -10,6 +10,7 @@ window.$ = window.jQuery = require('jquery');
 require('bootstrap');
 require('fastclick/lib/fastclick');
 require('jquery-sparkline');
+require('parsleyjs');
 
 window.moment = require('moment');
 require('bootstrap-daterangepicker/daterangepicker');
