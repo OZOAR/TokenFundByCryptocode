@@ -8,7 +8,7 @@ return [
             'title' => 'Profile',
             'settings' => 'Profile settings',
             'old_password' => 'Old password',
-            'password' => 'Password',
+            'password' => 'New password',
             'password_confirmation' => 'Confirm password',
         ],
         'logout'  => 'Log out',

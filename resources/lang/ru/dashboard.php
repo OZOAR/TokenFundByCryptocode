@@ -8,7 +8,7 @@ return [
             'title' => 'Профиль',
             'settings' => 'Настройки профиля',
             'old_password' => 'Старый пароль',
-            'password' => 'Пароль',
+            'password' => 'Новый пароль',
             'password_confirmation' => 'Подтвердить пароль',
         ],
         'logout'  => 'Выйти',
