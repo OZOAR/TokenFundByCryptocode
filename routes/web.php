@@ -30,7 +30,12 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () {
     $this->get('/', 'Dashboard\DashboardController@index')->name('dashboard.index');
-    $this->get('/profile', 'Dashboard\ProfileController@showProfile')->name('dashboard.profile');
+
+    Route::group(['prefix' => '/profile'], function () {
+        $this->get('/', 'Dashboard\ProfileController@showProfile')->name('dashboard.profile');
+        $this->post('/password/reset', 'Dashboard\ProfileController@resetAdminPassword')
+            ->name('dashboard.profile.password.reset');
+    });
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

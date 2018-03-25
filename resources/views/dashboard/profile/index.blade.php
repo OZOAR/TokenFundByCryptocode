@@ -16,7 +16,8 @@
                             <div class="profile_img">
                                 <div id="crop-avatar">
                                     <!-- Current avatar -->
-                                    <img class="img-responsive avatar-view" src="/images/default-user-image.jpg" alt="Avatar"
+                                    <img class="img-responsive avatar-view" src="/images/default-user-image.jpg"
+                                         alt="Avatar"
                                          title="Change the avatar">
                                 </div>
                             </div>
@@ -45,7 +46,7 @@
                                 <div id="myTabContent" class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade active in" id="tab_content1"
                                          aria-labelledby="home-tab">
-                                        <p><!-- TODO edit user's contacts here --></p>
+                                        @include('partials.dashboard.profile.password_reset')
                                     </div>
                                 </div>
                             </div>

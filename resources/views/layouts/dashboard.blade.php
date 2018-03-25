@@ -16,9 +16,9 @@
 <div id="app">
     <div class="container body">
         <div class="main_container">
-            @include('partials.dashboard.head')
-            @include('partials.dashboard.sidebar')
-            <!-- page content -->
+        @include('partials.dashboard.head')
+        @include('partials.dashboard.sidebar')
+        <!-- page content -->
             <div class="right_col" role="main">
                 @yield('content')
             </div>
@@ -28,6 +28,7 @@
 </div>
 
 <script src="{{ asset('js/dashboard/dashboard.js') }}"></script>
+<script src="{{ asset('js/dashboard/parsleyjs/'.app()->getLocale().'.js') }}"></script>
 <script src="{{ asset('js/dashboard/custom.min.js') }}"></script>
 </body>
 </html>

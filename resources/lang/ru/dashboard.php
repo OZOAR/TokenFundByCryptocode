@@ -7,6 +7,9 @@ return [
         'profile' => [
             'title' => 'Профиль',
             'settings' => 'Настройки профиля',
+            'old_password' => 'Старый пароль',
+            'password' => 'Пароль',
+            'password_confirmation' => 'Подтвердить пароль',
         ],
         'logout'  => 'Выйти',
     ],
@@ -27,5 +30,10 @@ return [
             'requests' => 'Запросы',
             'statistics' => 'Статистика',
         ],
+    ],
+
+    'button' => [
+        'submit' => 'Отправить',
+        'reset' => 'Изменить',
     ],
 ];
