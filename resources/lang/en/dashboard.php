@@ -7,6 +7,7 @@ return [
         'profile' => [
             'title' => 'Profile',
             'settings' => 'Profile settings',
+            'old_password' => 'Old password',
             'password' => 'Password',
             'password_confirmation' => 'Password confirmation',
         ],
