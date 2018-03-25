@@ -100,8 +100,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'password' => [
+            'confirmed' => 'Password confirmation does not match.',
+        ],
+        'password_confirmation' => [
+            'required' => 'Password confirmation is required.',
         ],
     ],
 
@@ -117,9 +120,9 @@ return [
     */
 
     'attributes' => [
-        'password_confirmation' => 'Password Confirmation',
+        'password_confirmation' => 'Password confirmation',
         'password' => 'Password',
-        'old_password' => 'Old Password',
+        'old_password' => 'Old password',
     ],
 
 ];

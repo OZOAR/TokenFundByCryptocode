@@ -110,8 +110,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'password' => [
+            'confirmed' => 'Пароль не совпадает с подтверждением.',
+        ],
+        'password_confirmation' => [
+            'required' => 'Подтверждение пароля обязательно.',
         ],
     ],
 
