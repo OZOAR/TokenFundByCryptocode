@@ -9,7 +9,7 @@ return [
             'settings' => 'Profile settings',
             'old_password' => 'Old password',
             'password' => 'Password',
-            'password_confirmation' => 'Password confirmation',
+            'password_confirmation' => 'Confirm password',
         ],
         'logout'  => 'Log out',
     ],
