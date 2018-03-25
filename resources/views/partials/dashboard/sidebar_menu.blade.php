@@ -6,7 +6,7 @@
     <li><a><i class="fa fa-user"></i> @lang('dashboard.sidebar.menu.users.index') <span
                     class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-            <li><a href="/">@lang('dashboard.sidebar.menu.users.manage')</a></li>
+            <li><a href="{{ route('dashboard.users.manage') }}">@lang('dashboard.sidebar.menu.users.manage')</a></li>
             <li><a href="/">@lang('dashboard.sidebar.menu.users.register')</a></li>
         </ul>
     </li>
