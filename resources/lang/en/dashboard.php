@@ -33,11 +33,13 @@ return [
     ],
 
     'users' => [
-        'title' => 'Users'
+        'title' => 'Users',
+        'manage' => 'Manage users'
     ],
 
     'button' => [
         'submit' => 'Submit',
         'reset' => 'Reset',
+        'view' => 'View',
     ],
 ];
