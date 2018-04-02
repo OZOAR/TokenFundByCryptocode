@@ -51,5 +51,6 @@ return [
         'submit' => 'Submit',
         'reset' => 'Reset',
         'view' => 'View',
+        'register' => 'Register new',
     ],
 ];

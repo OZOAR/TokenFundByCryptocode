@@ -7,7 +7,7 @@
                     class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
             <li><a href="{{ route('dashboard.users.manage') }}">@lang('dashboard.sidebar.menu.users.manage')</a></li>
-            <li><a href="/">@lang('dashboard.sidebar.menu.users.register')</a></li>
+            <li><a href="/">@lang('dashboard.sidebar.menu.users.register')</a></li> <!-- TODO change link -->
         </ul>
     </li>
     <li><a><i class="fa fa-bell"></i> @lang('dashboard.sidebar.menu.requests')</a></li>
