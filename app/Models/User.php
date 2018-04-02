@@ -49,6 +49,8 @@ class User extends Authenticatable
         switch ($role) {
             case 'admin':
                 return $this->isAdministrator();
+            case 'client':
+                return $this->isClient();
             default:
                 return false;
         }
@@ -61,7 +63,17 @@ class User extends Authenticatable
      */
     public function isAdministrator(): bool
     {
-        return $this->role->id === Role::ADMIN_ROLE_ID;
+        return $this->role_id === Role::ADMIN_ROLE_ID;
+    }
+
+    /**
+     * Check if user is client.
+     *
+     * @return bool
+     */
+    public function isClient(): bool
+    {
+        return $this->role_id === Role::CLIENT_ROLE_ID;
     }
 
     /**
@@ -115,6 +127,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Get user password.
+     *
+     * @return string
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    /**
      * Retrieve only presented user.
      *
      * @param $query
@@ -123,5 +145,16 @@ class User extends Authenticatable
     public function scopePresented($query)
     {
         return $query->where('is_removed', true);
+    }
+
+    /**
+     * Retrieve only clients.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeClients($query)
+    {
+        return $query->where('role_id', Role::CLIENT_ROLE_ID);
     }
 }

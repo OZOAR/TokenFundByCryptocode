@@ -42,7 +42,11 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
 
     Route::group(['prefix' => '/users'], function () {
         $this->get('/', 'Dashboard\UserController@showUsers')->name('dashboard.users.manage');
-        $this->get('/{id}', 'Dashboard\UserController@showParticularUser')->name('dashboard.users.show');
+        $this->get('/{id}', 'Dashboard\UserController@showParticularUser')
+            ->where('id', '[0-9]+')
+            ->name('dashboard.users.show');
+        $this->post('/password/reset', 'Dashboard\UserController@resetPassword') // TODO change controller method
+            ->name('dashboard.users.password.reset');
     });
 });
 

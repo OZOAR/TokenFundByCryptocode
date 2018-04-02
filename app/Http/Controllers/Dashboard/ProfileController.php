@@ -43,8 +43,7 @@ class ProfileController extends Controller
         return redirect()->back()->with('oldPasswordError', $errorMessage);
     }
 
-    private
-    function resetPassword($user, $password)
+    private function resetPassword($user, $password)
     {
         $user->password = Hash::make($password);
         $user->save();
