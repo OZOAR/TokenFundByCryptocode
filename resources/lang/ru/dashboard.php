@@ -31,6 +31,10 @@ return [
             'registration_date' => 'Дата регистрации',
             'last_pass_update' => 'Дата обновления пароля'
         ],
+        'profile' => [
+            'title' => 'Профиль пользователя',
+            'removed' => "удален",
+        ],
     ],
 
     'sidebar' => [

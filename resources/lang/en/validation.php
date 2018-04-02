@@ -106,6 +106,10 @@ return [
         'password_confirmation' => [
             'required' => 'Password confirmation is required.',
         ],
+        'client_id' => [
+            'required' => 'Client id is required to change password.',
+            'exists'   => 'Client id is incorrect or this user does not exists.',
+        ],
     ],
 
     /*
@@ -123,6 +127,7 @@ return [
         'password_confirmation' => 'Password confirmation',
         'password' => 'Password',
         'old_password' => 'Old password',
+        'client_id' => 'Client id',
     ],
 
 ];

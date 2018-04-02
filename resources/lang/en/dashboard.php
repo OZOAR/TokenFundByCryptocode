@@ -45,6 +45,10 @@ return [
             'registration_date' => 'Registration date',
             'last_pass_update' => 'Last password update'
         ],
+        'profile' => [
+            'title' => 'User profile',
+            'removed' => "removed",
+        ],
     ],
 
     'button' => [

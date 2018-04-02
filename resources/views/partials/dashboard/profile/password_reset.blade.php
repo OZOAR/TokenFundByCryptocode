@@ -10,9 +10,19 @@
     </ul>
 @endif
 
-<form action="{{ route('dashboard.profile.password.reset') }}" method="POST" id="profile-password-reset"
-      data-parsley-validate class="form-horizontal form-label-left">
+@if($errors->has('client_id'))
+    <ul class="alert alert-danger">
+        {{ $errors->first('client_id') }}
+    </ul>
+@endif
+
+<form action="{{ $route }}" method="POST" id="user-password-reset" data-parsley-validate
+      class="form-horizontal form-label-left">
     {{ csrf_field() }}
+
+    @if(Route::is('dashboard.users.show'))
+        <input type="hidden" name="client_id" value="{{ $clientId }}">
+    @endif
 
     <div class="form-group{{ $errors->has('old_password') ? ' has-error' : '' }}">
         <label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('dashboard.auth.profile.old_password') <span
