@@ -35,6 +35,8 @@
                                 <li class="m-top-xs">
                                     <i class="fa fa-user user-profile-icon"></i> @lang('dashboard.roles.'.$user->role->getSlugName())
                                 </li>
+                                <!-- TODO add registration date info -->
+                                <!-- TODO add last_pass_update info -->
                             </ul>
                         </div>
                         <div class="col-md-9 col-sm-9 col-xs-12">

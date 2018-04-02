@@ -18,11 +18,20 @@
             <td>{{ $user->getRegistrationDate() }}</td>
             <td>{{ $user->getRegistrationDate() }}</td> <!-- TODO Last password updating date -->
             <td>
-                <a href="{{ route('dashboard.users.show', ['id' => $user->getId()]) }}">
-                    <button type="button" class="btn btn-success btn-xs">
-                        @lang('dashboard.button.view')
-                    </button>
+                <a href="{{ route('dashboard.users.show', ['id' => $user->getId()]) }}"
+                   class="btn btn-primary btn-xs">
+                    <i class="fa fa-folder"></i> @lang('dashboard.button.view')
                 </a>
+
+                <a onclick="event.preventDefault(); document.getElementById('delete-user-form-{{ $user->getId() }}').submit();" class="btn btn-danger btn-xs {{ $user->isRemoved() ? 'disabled' : '' }}">
+                    <i class="fa fa-trash-o"></i> @lang('dashboard.button.delete')
+                </a>
+
+                <form id="delete-user-form-{{ $user->getId() }}" action="{{ route('dashboard.users.delete') }}"
+                      method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="user_id" value="{{ $user->getId() }}">
+                </form>
             </td>
         </tr>
     @endforeach

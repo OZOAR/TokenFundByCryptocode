@@ -49,6 +49,12 @@ return [
             'title' => 'User profile',
             'removed' => "removed",
         ],
+        'actions' => [
+            'delete' => [
+                'success' => 'User successfully deleted.',
+                'self_fail' => 'You can\'t delete yourself.',
+            ],
+        ],
     ],
 
     'button' => [
@@ -56,5 +62,6 @@ return [
         'reset' => 'Reset',
         'view' => 'View',
         'register' => 'Register new',
+        'delete' => 'Delete',
     ],
 ];

@@ -28,6 +28,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Set removed flag for user.
+     *
+     * @param bool $value
+     */
+    public function setRemovedFlag($value = false)
+    {
+        $this->is_removed = $value;
+    }
+
+    /**
      * Get user's policy.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
