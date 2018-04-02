@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function showParticularUser($userId = null)
     {
-        $user = User::find($userId)->first();
+        $user = User::find($userId);
 
         return view('dashboard.users.show')->with('user', $user);
     }
@@ -46,7 +46,7 @@ class UserController extends Controller
     public function resetPassword(ResetClientPasswordRequest $request)
     {
         $errorMessage = 'passwords.user';
-        $user = User::find($request->input('client_id'))->first();
+        $user = User::find($request->input('client_id'));
 
         if ($user !== null) {
             $currentPassword = $user->getPassword();

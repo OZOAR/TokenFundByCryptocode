@@ -144,5 +144,6 @@ return [
         'password' => 'Пароль',
         'old_password' => 'Старый пароль',
         'client_id' => 'Номер клиента',
+        'email' => 'Email',
     ],
 ];

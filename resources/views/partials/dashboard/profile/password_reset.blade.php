@@ -22,6 +22,19 @@
 
     @if(Route::is('dashboard.users.show'))
         <input type="hidden" name="client_id" value="{{ $clientId }}">
+
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('dashboard.users.model.email') <span
+                        class="required">*</span></label>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <input type="text" name="email" class="form-control" required="required">
+                @if ($errors->has('email'))
+                    <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+                @endif
+            </div>
+        </div>
     @endif
 
     <div class="form-group{{ $errors->has('old_password') ? ' has-error' : '' }}">

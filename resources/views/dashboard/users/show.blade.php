@@ -52,7 +52,8 @@
                                     <div role="tabpanel" class="tab-pane fade active in" id="tab_content1"
                                          aria-labelledby="home-tab">
                                         @include('partials.dashboard.profile.password_reset',
-                                            ['route' => route('dashboard.users.password.reset'), 'clientId' => $user->getId()])
+                                            ['route' => route('dashboard.users.password.reset'),
+                                             'clientId' => $user->getId()])
                                     </div>
                                 </div>
                             </div>

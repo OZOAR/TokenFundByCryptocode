@@ -24,6 +24,7 @@ class ResetClientPasswordRequest extends FormRequest
     public function rules()
     {
         return [
+            'email' => 'required|email|exists:users,email',
             'old_password' => 'required',
             'client_id' => 'required|integer|exists:users,id',
             'password' => 'required|confirmed|min:6',

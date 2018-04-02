@@ -128,6 +128,7 @@ return [
         'password' => 'Password',
         'old_password' => 'Old password',
         'client_id' => 'Client id',
+        'email' => 'Email',
     ],
 
 ];
