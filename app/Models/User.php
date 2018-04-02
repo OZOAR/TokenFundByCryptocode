@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'role_id', 'name', 'email', 'password'
+        'role_id', 'name', 'email', 'password', 'is_removed'
     ];
 
     /**
@@ -65,6 +65,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Get id of the user.
+     *
+     * @return integer
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
      * Get name of the user.
      *
      * @return string
@@ -82,5 +92,36 @@ class User extends Authenticatable
     public function getEmail(): string
     {
         return $this->email;
+    }
+
+    /**
+     * Check if user removed.
+     *
+     * @return bool
+     */
+    public function isRemoved(): bool
+    {
+        return $this->is_removed;
+    }
+
+    /**
+     * Get registration date of the user.
+     *
+     * @return mixed
+     */
+    public function getRegistrationDate()
+    {
+        return $this->created_at; // TODO fix `created_at` field currently doesn't set
+    }
+
+    /**
+     * Retrieve only presented user.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopePresented($query)
+    {
+        return $query->where('is_removed', true);
     }
 }
