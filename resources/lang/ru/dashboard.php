@@ -2,6 +2,9 @@
 
 return [
     'title' => 'Админ-панель',
+    'headers' => [
+        'action' => 'Действие'
+    ],
 
     'auth' => [
         'profile' => [
@@ -21,7 +24,13 @@ return [
 
     'users' => [
         'title' => 'Пользователи',
-        'manage' => 'Управление пользователями'
+        'manage' => 'Управление пользователями',
+        'model' => [
+            'username' => 'Никнейм',
+            'email' => 'Email',
+            'registration_date' => 'Дата регистрации',
+            'last_pass_update' => 'Дата обновления пароля'
+        ],
     ],
 
     'sidebar' => [

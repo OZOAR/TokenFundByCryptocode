@@ -3,6 +3,10 @@
 return [
     'title' => 'Dashboard',
 
+    'headers' => [
+        'action' => 'Action'
+    ],
+
     'auth' => [
         'profile' => [
             'title' => 'Profile',
@@ -34,7 +38,13 @@ return [
 
     'users' => [
         'title' => 'Users',
-        'manage' => 'Manage users'
+        'manage' => 'Manage users',
+        'model' => [
+            'username' => 'Username',
+            'email' => 'Email',
+            'registration_date' => 'Registration date',
+            'last_pass_update' => 'Last password update'
+        ],
     ],
 
     'button' => [
