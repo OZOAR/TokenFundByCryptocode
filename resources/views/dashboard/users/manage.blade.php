@@ -18,7 +18,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    @include('partials.dashboard.users.list')
+                    @include('dashboard.users.list')
                 </div>
             </div>
         </div>
