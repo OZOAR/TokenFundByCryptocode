@@ -10,11 +10,6 @@ use Hash;
 
 class ProfileController extends Controller
 {
-    public function showProfile()
-    {
-        return view('dashboard.profile.index');
-    }
-
     /**
      * Reset the given admin's password.
      *

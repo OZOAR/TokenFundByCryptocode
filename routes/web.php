@@ -36,13 +36,13 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
     $this->get('/', 'Dashboard\DashboardController@index')->name('dashboard.index');
 
     Route::group(['prefix' => '/profile'], function () {
-        $this->get('/', 'Dashboard\ProfileController@showProfile')->name('dashboard.profile');
         $this->post('/password/reset', 'Dashboard\ProfileController@resetAdminPassword')
             ->name('dashboard.profile.password.reset');
     });
 
     Route::group(['prefix' => '/users'], function () {
         $this->get('/', 'Dashboard\UserController@showUsers')->name('dashboard.users.manage');
+        $this->get('/{id}', 'Dashboard\UserController@showParticularUser')->name('dashboard.users.show');
     });
 });
 
