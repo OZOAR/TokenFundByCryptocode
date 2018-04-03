@@ -19,6 +19,7 @@ class Role extends Model
     protected $fillable = [
         'slug', 'title',
     ];
+
     /**
      * @var bool
      */
