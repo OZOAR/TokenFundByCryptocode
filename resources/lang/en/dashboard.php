@@ -50,7 +50,7 @@ return [
         'manage' => 'Manage users',
         'register' => 'Register a user',
         'model' => [
-            'username' => 'Username',
+            'name' => 'Username',
             'email' => 'Email',
             'password' => 'Password',
             'registration_date' => 'Registration date',
@@ -65,7 +65,11 @@ return [
             'delete' => [
                 'success' => 'User successfully deleted.',
                 'self_fail' => 'You can\'t delete yourself.',
-                'already' => 'User is already deleted.',
+                'already' => 'The user already deleted.',
+            ],
+            'create' => [
+                'success' => 'User successfully deleted.',
+                'fail' => 'Can\'t create user. Server error.',
             ],
         ],
     ],

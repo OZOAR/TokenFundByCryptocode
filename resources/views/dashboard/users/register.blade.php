@@ -1,6 +1,13 @@
 @extends('layouts.dashboard', ['pageTitle' => __('dashboard.users.register')])
 
 @section('content')
+
+    <div class="row">
+        <div class="col-md-12">
+            @include('dashboard.users.messages')
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
@@ -14,16 +21,16 @@
 
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">
-                                @lang('dashboard.users.model.username') <span class="required">*</span>
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
+                                @lang('dashboard.users.model.name') <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" value="{{ old('username') }}" minlength="3" name="username" id="username" required="required"
+                                <input type="text" value="{{ old('name') }}" minlength="3" name="name" id="name" required="required"
                                        class="form-control col-md-7 col-xs-12">
-                                @if ($errors->has('username'))
+                                @if ($errors->has('name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('username') }}</strong>
+                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
                             </div>

@@ -2,7 +2,7 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>@lang('dashboard.users.model.username')</th>
+        <th>@lang('dashboard.users.model.name')</th>
         <th>@lang('dashboard.users.model.email')</th>
         <th>@lang('dashboard.users.model.registration_date')</th>
         <th>@lang('dashboard.users.model.last_pass_update')</th>
