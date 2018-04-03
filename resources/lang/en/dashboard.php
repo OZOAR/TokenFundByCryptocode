@@ -29,6 +29,7 @@ return [
         'show_title' => 'Showing request',
         'empty_collection' => 'Requests list is empty.',
         'model' => [
+            'name' => 'Request',
             'owner' => 'Sender',
             'created_at' => 'Created at',
             'message' => 'Message',

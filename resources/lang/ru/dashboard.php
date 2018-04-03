@@ -28,6 +28,7 @@ return [
         'show_title' => 'Просмотр запроса',
         'empty_collection' => 'Список запросов пуст.',
         'model' => [
+            'name' => 'Запрос',
             'owner' => 'Отправитель',
             'created_at' => 'Дата создания',
             'message' => 'Сообщение',
