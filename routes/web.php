@@ -40,6 +40,14 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
             ->name('dashboard.profile.password.reset');
     });
 
+    // Dashboard requests routes
+    Route::group(['prefix' => '/requests'], function () {
+        $this->get('/', 'Dashboard\RequestController@showRequests')->name('dashboard.requests.index');
+        $this->get('/{id}', 'Dashboard\RequestController@showParticularRequest')
+            ->where('id', '[0-9]+')
+            ->name('dashboard.requests.show');
+    });
+
     // Dashboard users routes
     Route::group(['prefix' => '/users'], function () {
         $this->get('/', 'Dashboard\UserController@showUsers')->name('dashboard.users.manage');
