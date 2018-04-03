@@ -81,7 +81,7 @@ class UserController extends Controller
     public function deleteUser(DeleteUserRequest $request)
     {
         $authUser = Auth::user();
-        $deleteUser = User::find($request->input('user_id'));
+        $deleteUser = User::find($request->input('client_id'));
 
         // prevent self-deleting
         if($deleteUser->getId() !== $authUser->getId()) {

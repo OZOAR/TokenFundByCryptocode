@@ -30,7 +30,7 @@
                 <form id="delete-user-form-{{ $user->getId() }}" action="{{ route('dashboard.users.delete') }}"
                       method="POST" style="display: none;">
                     {{ csrf_field() }}
-                    <input type="hidden" name="user_id" value="{{ $user->getId() }}">
+                    <input type="hidden" name="client_id" value="{{ $user->getId() }}">
                 </form>
             </td>
         </tr>
