@@ -153,7 +153,7 @@ class User extends Authenticatable
      */
     public function getRegistrationDate()
     {
-        return $this->created_at; // TODO fix `created_at` field currently doesn't set
+        return $this->created_at;
     }
 
     /**
