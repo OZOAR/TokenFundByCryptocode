@@ -43,6 +43,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
     // Dashboard users routes
     Route::group(['prefix' => '/users'], function () {
         $this->get('/', 'Dashboard\UserController@showUsers')->name('dashboard.users.manage');
+        $this->get('/register', 'Dashboard\UserController@showRegisterPage')->name('dashboard.users.register');
         $this->get('/{id}', 'Dashboard\UserController@showParticularUser')
             ->where('id', '[0-9]+')
             ->name('dashboard.users.show');

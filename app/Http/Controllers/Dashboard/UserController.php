@@ -104,6 +104,16 @@ class UserController extends Controller
             ->with('self_delete_error', 'dashboard.users.actions.delete.self_fail');
     }
 
+    /**
+     * Show dashboard user's register page.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showRegisterPage()
+    {
+        return view('dashboard.users.register');
+    }
+
     private function resetGivenPassword($user, $password)
     {
         $user->setPassword(Hash::make($password));

@@ -48,6 +48,7 @@ return [
     'users' => [
         'title' => 'Users',
         'manage' => 'Manage users',
+        'register' => 'Register a user',
         'model' => [
             'username' => 'Username',
             'email' => 'Email',
