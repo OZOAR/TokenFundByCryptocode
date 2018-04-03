@@ -7,6 +7,7 @@ use App\Http\Requests\Dashboard\DeleteUserRequest;
 use App\Http\Requests\Dashboard\RegisterUserRequest;
 use App\Http\Requests\Dashboard\ResetClientPasswordRequest;
 use App\Models\User;
+use App\Models\Role;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Auth;
@@ -89,7 +90,7 @@ class UserController extends Controller
 
         if($deleteUser->isRemoved()) {
             return redirect()->back()
-                ->with('already_deleted', 'dashboard.users.actions.delete.already');
+                ->with('error', 'dashboard.users.actions.delete.already');
         }
 
         // prevent self-deleting
@@ -102,7 +103,7 @@ class UserController extends Controller
         }
 
         return redirect()->back()
-            ->with('self_delete_error', 'dashboard.users.actions.delete.self_fail');
+            ->with('error', 'dashboard.users.actions.delete.self_fail');
     }
 
     /**
@@ -117,7 +118,25 @@ class UserController extends Controller
 
     public function registerUser(RegisterUserRequest $request)
     {
-        // TODO implement
+        $password = $request->input('password');
+        $user = new User();
+
+        $user->setRole(Role::CLIENT_ROLE_ID);
+        $user->setName($request->input('name'));
+        $user->setEmail($request->input('email'));
+        $user->setPassword(Hash::make($password));
+
+        $isUserCreated = $user->save();
+
+        if($isUserCreated) {
+            return redirect()
+                ->route('dashboard.users.manage')
+                ->with('success', 'dashboard.users.actions.create.success');
+        }
+
+        return redirect()->back()
+            ->withInput()
+            ->with('error', 'dashboard.users.actions.create.fail');
     }
 
     private function resetGivenPassword($user, $password)
