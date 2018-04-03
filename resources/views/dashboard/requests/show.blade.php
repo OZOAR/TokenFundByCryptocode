@@ -27,7 +27,7 @@
                                                 <a>@lang('dashboard.requests.model.name') #{{ $request->getId() }}</a>
                                             </h2>
                                             <div class="byline" style="font-size: 1.02em;">
-                                                <span>{{ $request->getCreatedDate() }}</span>
+                                                <span><strong>{{ $request->owner->getEmail() }}</strong> | {{ $request->getCreatedDate() }}</span>
                                             </div>
                                             <p class="excerpt">{{ $request->getMessage() }}</p>
                                         </div>
