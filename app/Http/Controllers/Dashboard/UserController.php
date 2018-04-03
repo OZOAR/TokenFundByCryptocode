@@ -17,8 +17,8 @@ use App\Mail\UserCreatedMail;
 
 class UserController extends Controller
 {
-    const USERS_PER_PAGE = 5; // TODO change
-    const REQUESTS_PER_PAGE = 1; // TODO change
+    const USERS_PER_PAGE = 10;
+    const REQUESTS_PER_PAGE = 10;
 
     /**
      * Show all clients.
@@ -118,6 +118,12 @@ class UserController extends Controller
         return view('dashboard.users.register');
     }
 
+    /**
+     * Register new user.
+     *
+     * @param RegisterUserRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function registerUser(RegisterUserRequest $request)
     {
         $password = $request->input('password');
