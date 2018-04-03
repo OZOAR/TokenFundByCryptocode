@@ -24,8 +24,11 @@ return [
     ],
 
     'requests' => [
+        'title' => 'Запросы',
+        'show_title' => 'Просмотр запроса',
         'empty_collection' => 'Список запросов пуст.',
         'model' => [
+            'owner' => 'Отправитель',
             'created_at' => 'Дата создания',
             'message' => 'Сообщение',
         ],

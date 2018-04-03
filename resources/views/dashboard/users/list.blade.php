@@ -13,7 +13,7 @@
 
     @foreach($users as $user)
         <tr>
-            <th scope="row">{{ $user->getId() }}</th>
+            <td>{{ $user->getId() }}</td>
             <td>{{ $user->getName() }}</td>
             <td>{{ $user->getEmail() }}</td>
             <td>{{ $user->getRegistrationDate() }}</td>

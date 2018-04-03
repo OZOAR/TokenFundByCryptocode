@@ -10,6 +10,6 @@
             <li><a href="{{ route('dashboard.users.register') }}">@lang('dashboard.sidebar.menu.users.register')</a></li>
         </ul>
     </li>
-    <li><a><i class="fa fa-bell"></i> @lang('dashboard.sidebar.menu.requests')</a></li> <!-- TODO change link -->
+    <li><a href="{{ route('dashboard.requests.index') }}"><i class="fa fa-bell"></i> @lang('dashboard.sidebar.menu.requests')</a></li>
     <li><a><i class="fa fa-bar-chart-o"></i> @lang('dashboard.sidebar.menu.statistics')</a></li> <!-- TODO change link -->
 </ul>
