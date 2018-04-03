@@ -10,6 +10,7 @@ return [
         'profile' => [
             'title' => 'Профиль',
             'settings' => 'Настройки профиля',
+            'requests' => 'Запросы',
             'old_password' => 'Старый пароль',
             'password' => 'Новый пароль',
             'password_confirmation' => 'Подтвердить пароль',
@@ -20,6 +21,14 @@ return [
     'roles' => [
         'administrator' => 'Администратор',
         'client' => 'Клиент'
+    ],
+
+    'requests' => [
+        'empty_collection' => 'Список запросов пуст.',
+        'model' => [
+            'created_at' => 'Дата создания',
+            'message' => 'Сообщение',
+        ],
     ],
 
     'users' => [
@@ -35,6 +44,7 @@ return [
             'title' => 'Профиль пользователя',
             'removed' => "удален",
         ],
+        'empty_collection' => 'Список пользователей пуст.',
         'actions' => [
             'delete' => [
                 'success' => 'Пользователь успешно удалён.',

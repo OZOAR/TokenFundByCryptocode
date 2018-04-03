@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped no-margin">
     <thead>
     <tr>
         <th>#</th>
@@ -10,6 +10,7 @@
     </tr>
     </thead>
     <tbody>
+
     @foreach($users as $user)
         <tr>
             <th scope="row">{{ $user->getId() }}</th>

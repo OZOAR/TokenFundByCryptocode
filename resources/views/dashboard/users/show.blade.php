@@ -8,7 +8,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2 style="padding-bottom: 5px;">@lang('dashboard.users.profile.title')
+                        <h2 style="padding-bottom: 5px; width: 100%;">@lang('dashboard.users.profile.title')
                             @if($user->isRemoved())
                                 <span class="label label-danger" style="color:white; font-weight: 500">
                                     @lang('dashboard.users.profile.removed')
@@ -35,8 +35,6 @@
                                 <li class="m-top-xs">
                                     <i class="fa fa-user user-profile-icon"></i> @lang('dashboard.roles.'.$user->role->getSlugName())
                                 </li>
-                                <!-- TODO add registration date info -->
-                                <!-- TODO add last_pass_update info -->
                             </ul>
                         </div>
                         <div class="col-md-9 col-sm-9 col-xs-12">
@@ -49,6 +47,11 @@
                                             @lang('dashboard.auth.profile.settings')
                                         </a>
                                     </li>
+                                    <li role="presentation">
+                                        <a href="#tab_content2" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">
+                                            @lang('dashboard.auth.profile.requests')
+                                        </a>
+                                    </li>
                                 </ul>
                                 <div id="myTabContent" class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade active in" id="tab_content1"
@@ -56,6 +59,19 @@
                                         @include('partials.dashboard.profile.password_reset',
                                             ['route' => route('dashboard.users.password.reset'),
                                              'clientId' => $user->getId()])
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                        @if(count($requests))
+                                            @include('partials.dashboard.profile.requests')
+                                        @else
+                                            @lang('dashboard.requests.empty_collection')
+                                        @endif
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                {{ $requests->links() }}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

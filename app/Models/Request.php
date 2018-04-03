@@ -48,6 +48,16 @@ class Request extends Model
     }
 
     /**
+     * Get id of the request.
+     *
+     * @return integer
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
      * Get message of the request.
      *
      * @return string

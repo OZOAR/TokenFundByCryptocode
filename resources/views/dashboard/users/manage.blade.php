@@ -21,7 +21,13 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    @include('dashboard.users.list')
+                    <div class="table-responsive"> <!-- TODO fix responsive -->
+                        @if(count($users))
+                            @include('dashboard.users.list')
+                        @else
+                            @lang('dashboard.users.empty_collection')
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

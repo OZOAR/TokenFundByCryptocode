@@ -11,6 +11,7 @@ return [
         'profile' => [
             'title' => 'Profile',
             'settings' => 'Profile settings',
+            'requests' => 'Requests',
             'old_password' => 'Old password',
             'password' => 'New password',
             'password_confirmation' => 'Confirm password',
@@ -21,6 +22,14 @@ return [
     'roles' => [
         'administrator' => 'Administrator',
         'client' => 'Client'
+    ],
+
+    'requests' => [
+        'empty_collection' => 'Requests list is empty.',
+        'model' => [
+            'created_at' => 'Created at',
+            'message' => 'Message',
+        ],
     ],
 
     'sidebar' => [
@@ -49,6 +58,7 @@ return [
             'title' => 'User profile',
             'removed' => "removed",
         ],
+        'empty_collection' => 'Users list is empty.',
         'actions' => [
             'delete' => [
                 'success' => 'User successfully deleted.',

@@ -14,6 +14,7 @@ use Hash;
 class UserController extends Controller
 {
     const USERS_PER_PAGE = 5; // TODO change
+    const REQUESTS_PER_PAGE = 1; // TODO change
 
     /**
      * Show all clients.
@@ -36,7 +37,7 @@ class UserController extends Controller
     public function showParticularUser($userId = null)
     {
         $user = User::find($userId);
-        $requests = $user->requests;
+        $requests = $user->requests()->paginate(self::REQUESTS_PER_PAGE);
 
         return view('dashboard.users.show')->with(compact(['user', 'requests']));
     }
