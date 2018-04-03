@@ -9,6 +9,7 @@ class Role extends Model
     public $table = 'roles';
 
     const ADMIN_ROLE_ID = 1;
+    const CLIENT_ROLE_ID = 2;
 
     /**
      * The attributes that are mass assignable.
@@ -18,6 +19,7 @@ class Role extends Model
     protected $fillable = [
         'slug', 'title',
     ];
+
     /**
      * @var bool
      */

@@ -4,14 +4,14 @@ namespace App\Http\Requests\Dashboard;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ResetAdminPasswordRequest extends FormRequest
+class ResetClientPasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
@@ -21,10 +21,12 @@ class ResetAdminPasswordRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(): array
+    public function rules()
     {
         return [
+            'email' => 'required|email|exists:users,email',
             'old_password' => 'required',
+            'client_id' => 'required|integer|exists:users,id',
             'password' => 'required|confirmed|min:6',
             'password_confirmation' => 'required|min:6'
         ];
