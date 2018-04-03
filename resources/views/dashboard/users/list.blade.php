@@ -16,7 +16,7 @@
             <td>{{ $user->getName() }}</td>
             <td>{{ $user->getEmail() }}</td>
             <td>{{ $user->getRegistrationDate() }}</td>
-            <td>{{ $user->getRegistrationDate() }}</td> <!-- TODO Last password updating date -->
+            <td>{{ ($lastPasswordUpdate = $user->getLastPasswordUpdateDate()) ? $lastPasswordUpdate : __('dashboard.empty_field') }}</td>
             <td>
                 <a href="{{ route('dashboard.users.show', ['id' => $user->getId()]) }}"
                    class="btn btn-primary btn-xs">

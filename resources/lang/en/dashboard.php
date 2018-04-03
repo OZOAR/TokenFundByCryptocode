@@ -53,6 +53,7 @@ return [
             'delete' => [
                 'success' => 'User successfully deleted.',
                 'self_fail' => 'You can\'t delete yourself.',
+                'already' => 'User is already deleted.',
             ],
         ],
     ],
@@ -64,4 +65,6 @@ return [
         'register' => 'Register new',
         'delete' => 'Delete',
     ],
+
+    'empty_field' => 'Empty',
 ];
