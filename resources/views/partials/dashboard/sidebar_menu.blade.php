@@ -1,4 +1,4 @@
-<ul class="nav side-menu"><!-- TODO fix menu -->
+<ul class="nav side-menu">
     <li><a href="{{ route('dashboard.index') }}">
             <i class="fa fa-home"></i> @lang('dashboard.sidebar.menu.home')
         </a>
@@ -10,6 +10,6 @@
             <li><a href="/">@lang('dashboard.sidebar.menu.users.register')</a></li> <!-- TODO change link -->
         </ul>
     </li>
-    <li><a><i class="fa fa-bell"></i> @lang('dashboard.sidebar.menu.requests')</a></li>
-    <li><a><i class="fa fa-bar-chart-o"></i> @lang('dashboard.sidebar.menu.statistics')</a></li>
+    <li><a><i class="fa fa-bell"></i> @lang('dashboard.sidebar.menu.requests')</a></li> <!-- TODO change link -->
+    <li><a><i class="fa fa-bar-chart-o"></i> @lang('dashboard.sidebar.menu.statistics')</a></li> <!-- TODO change link -->
 </ul>

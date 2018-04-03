@@ -31,7 +31,7 @@ Route::group(['prefix' => '/password'], function () {
     $this->post('/reset', 'Auth\ResetPasswordController@reset');
 });
 
-// All dashboard routes
+// Dashboard routes
 Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () {
     $this->get('/', 'Dashboard\DashboardController@index')->name('dashboard.index');
 
@@ -40,14 +40,16 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
             ->name('dashboard.profile.password.reset');
     });
 
+    // Dashboard users routes
     Route::group(['prefix' => '/users'], function () {
         $this->get('/', 'Dashboard\UserController@showUsers')->name('dashboard.users.manage');
         $this->get('/{id}', 'Dashboard\UserController@showParticularUser')
             ->where('id', '[0-9]+')
             ->name('dashboard.users.show');
+
         $this->post('/password/reset', 'Dashboard\UserController@resetPassword')
             ->name('dashboard.users.password.reset');
-        $this->post('/delete', 'Dashboard\UserController@deleteUser')->name('dashboard.users.delete'); // TODO change method
+        $this->post('/delete', 'Dashboard\UserController@deleteUser')->name('dashboard.users.delete');
     });
 });
 
