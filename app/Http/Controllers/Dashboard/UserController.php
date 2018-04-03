@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\DeleteUserRequest;
 use App\Http\Requests\Dashboard\ResetClientPasswordRequest;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Auth;
 use Hash;
@@ -83,6 +84,11 @@ class UserController extends Controller
         $authUser = Auth::user();
         $deleteUser = User::find($request->input('client_id'));
 
+        if($deleteUser->isRemoved()) {
+            return redirect()->back()
+                ->with('already_deleted', 'dashboard.users.actions.delete.already');
+        }
+
         // prevent self-deleting
         if($deleteUser->getId() !== $authUser->getId()) {
             $deleteUser->setRemovedFlag(true);
@@ -98,7 +104,9 @@ class UserController extends Controller
 
     private function resetGivenPassword($user, $password)
     {
-        $user->password = Hash::make($password);
+        $user->setPassword(Hash::make($password));
+        $user->setLastPasswordUpdate(Carbon::now());
+
         $user->save();
 
         event(new PasswordReset($user));

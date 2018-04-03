@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\ResetAdminPasswordRequest;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Auth;
 use Hash;
@@ -28,7 +29,7 @@ class ProfileController extends Controller
             $password = $request->input('password');
 
             if (Hash::check($oldPassword, $currentPassword) && !Hash::check($password, $currentPassword)) {
-                $this->resetPassword($user, $password);
+                $this->resetGivenPassword($user, $password);
 
                 return redirect()->back()->with('success', 'passwords.reset');
             }
@@ -43,9 +44,10 @@ class ProfileController extends Controller
         return redirect()->back()->with('oldPasswordError', $errorMessage);
     }
 
-    private function resetPassword($user, $password)
+    private function resetGivenPassword($user, $password)
     {
-        $user->password = Hash::make($password);
+        $user->setPassword(Hash::make($password));
+        $user->setLastPasswordUpdate(Carbon::now());
         $user->save();
 
         event(new PasswordReset($user));

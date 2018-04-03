@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'role_id', 'name', 'email', 'password', 'is_removed'
+        'role_id', 'name', 'email', 'password', 'is_removed', 'last_password_update'
     ];
 
     /**
@@ -35,6 +35,26 @@ class User extends Authenticatable
     public function setRemovedFlag($value = false)
     {
         $this->is_removed = $value;
+    }
+
+    /**
+     * Set last password update date for user.
+     *
+     * @param bool $date
+     */
+    public function setLastPasswordUpdate($date)
+    {
+        $this->last_password_update = $date;
+    }
+
+    /**
+     * Set password for user.
+     *
+     * @param bool $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 
     /**
@@ -134,6 +154,16 @@ class User extends Authenticatable
     public function getRegistrationDate()
     {
         return $this->created_at; // TODO fix `created_at` field currently doesn't set
+    }
+
+    /**
+     * Get last password update date for user.
+     *
+     * @return mixed
+     */
+    public function getLastPasswordUpdateDate()
+    {
+        return $this->last_password_update;
     }
 
     /**
