@@ -52,6 +52,7 @@ return [
         'model' => [
             'username' => 'Username',
             'email' => 'Email',
+            'password' => 'Password',
             'registration_date' => 'Registration date',
             'last_pass_update' => 'Last password update'
         ],

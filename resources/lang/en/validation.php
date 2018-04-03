@@ -110,6 +110,9 @@ return [
             'required' => 'Client id is required to change password.',
             'exists'   => 'Client id is incorrect or this user does not exists.',
         ],
+        'email' => [
+            'unique' => 'User with such email already exists.',
+        ],
     ],
 
     /*
@@ -129,6 +132,7 @@ return [
         'old_password' => 'Old password',
         'client_id' => 'Client id',
         'email' => 'Email',
+        'username' => 'Username',
     ],
 
 ];

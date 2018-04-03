@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\DeleteUserRequest;
+use App\Http\Requests\Dashboard\RegisterUserRequest;
 use App\Http\Requests\Dashboard\ResetClientPasswordRequest;
 use App\Models\User;
 use Carbon\Carbon;
@@ -112,6 +113,11 @@ class UserController extends Controller
     public function showRegisterPage()
     {
         return view('dashboard.users.register');
+    }
+
+    public function registerUser(RegisterUserRequest $request)
+    {
+        // TODO implement
     }
 
     private function resetGivenPassword($user, $password)

@@ -38,6 +38,7 @@ return [
         'model' => [
             'username' => 'Никнейм',
             'email' => 'Email',
+            'password' => 'Пароль',
             'registration_date' => 'Дата регистрации',
             'last_pass_update' => 'Дата обновления пароля'
         ],

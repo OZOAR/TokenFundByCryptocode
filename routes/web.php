@@ -48,6 +48,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
             ->where('id', '[0-9]+')
             ->name('dashboard.users.show');
 
+        $this->post('/register', 'Dashboard\UserController@registerUser')->name('dashboard.users.register.post');
         $this->post('/password/reset', 'Dashboard\UserController@resetPassword')
             ->name('dashboard.users.password.reset');
         $this->post('/delete', 'Dashboard\UserController@deleteUser')->name('dashboard.users.delete');
