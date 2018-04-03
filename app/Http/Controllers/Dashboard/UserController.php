@@ -36,8 +36,9 @@ class UserController extends Controller
     public function showParticularUser($userId = null)
     {
         $user = User::find($userId);
+        $requests = $user->requests;
 
-        return view('dashboard.users.show')->with('user', $user);
+        return view('dashboard.users.show')->with(compact(['user', 'requests']));
     }
 
     /**

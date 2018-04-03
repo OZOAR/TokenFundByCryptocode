@@ -68,6 +68,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Get requests for a user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function requests()
+    {
+        return $this->hasMany(Request::class);
+    }
+
+    /**
      * Check if user has a role.
      *
      * @param string $role
