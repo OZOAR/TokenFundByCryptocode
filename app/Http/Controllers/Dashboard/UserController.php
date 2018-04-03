@@ -11,7 +11,9 @@ use App\Models\Role;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Hash;
+use App\Mail\UserCreatedMail;
 
 class UserController extends Controller
 {
@@ -129,6 +131,8 @@ class UserController extends Controller
         $isUserCreated = $user->save();
 
         if($isUserCreated) {
+            Mail::to($user)->send(new UserCreatedMail($user));
+
             return redirect()
                 ->route('dashboard.users.manage')
                 ->with('success', 'dashboard.users.actions.create.success');
