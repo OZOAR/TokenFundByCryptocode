@@ -134,11 +134,12 @@ class UserController extends Controller
         $user->setEmail($request->input('email'));
         $user->setPassword(Hash::make($password));
 
+        // TODO add check for sending error
+        Mail::to($user)->send(new UserCreatedMail($user, $password));
+
         $isUserCreated = $user->save();
 
         if($isUserCreated) {
-            Mail::to($user)->send(new UserCreatedMail($user, $password));
-
             return redirect()
                 ->route('dashboard.users.manage')
                 ->with('success', 'dashboard.users.actions.create.success');
