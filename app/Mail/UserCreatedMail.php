@@ -2,10 +2,12 @@
 
 namespace App\Mail;
 
+use App\Http\Middleware\Localization;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Session;
 
 class UserCreatedMail extends Mailable
 {
@@ -30,8 +32,8 @@ class UserCreatedMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('') // TODO change subject
-            ->view('mail.users.create')
+        return $this->subject(__('mail.subject'))
+            ->view(__('mail.message'))
             ->with('user', $this->user);
     }
 }
