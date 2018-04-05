@@ -36,17 +36,8 @@ return [
         ],
     ],
 
-    'sidebar' => [
-        'menu' => [
-            'home' => 'Home',
-            'users' => [
-                'index'    => 'Users',
-                'manage'   => 'Manage',
-                'register' => 'Register new',
-            ],
-            'requests' => 'Requests',
-            'statistics' => 'Statistics',
-        ],
+    'statistics' => [
+        'title' => 'Statistics',
     ],
 
     'users' => [
@@ -75,6 +66,19 @@ return [
                 'success' => 'User successfully deleted.',
                 'fail' => 'Can\'t create user. Server error.',
             ],
+        ],
+    ],
+
+    'sidebar' => [
+        'menu' => [
+            'home' => 'Home',
+            'users' => [
+                'index'    => 'Users',
+                'manage'   => 'Manage',
+                'register' => 'Register new',
+            ],
+            'requests' => 'Requests',
+            'statistics' => 'Statistics',
         ],
     ],
 

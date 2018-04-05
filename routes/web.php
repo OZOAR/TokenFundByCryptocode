@@ -48,6 +48,12 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
             ->name('dashboard.requests.show');
     });
 
+
+    // Dashboard statistics routes
+    Route::group(['prefix' => '/statistics'], function () {
+        $this->get('/', 'Dashboard\StatisticsController@showStatisticsPage')->name('dashboard.statistics.index');
+    });
+
     // Dashboard users routes
     Route::group(['prefix' => '/users'], function () {
         $this->get('/', 'Dashboard\UserController@showUsers')->name('dashboard.users.manage');
