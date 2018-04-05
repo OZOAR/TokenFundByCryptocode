@@ -36,7 +36,7 @@ class UserCreatedMail extends Mailable
     public function build()
     {
         return $this->subject(__('mail.subject'))
-            ->view(__('mail.message'))
+            ->view('mail.users.create')
             ->with(['user' => $this->user, 'password' => $this->password]);
     }
 }
