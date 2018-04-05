@@ -4,17 +4,21 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\DeleteUserRequest;
+use App\Http\Requests\Dashboard\RegisterUserRequest;
 use App\Http\Requests\Dashboard\ResetClientPasswordRequest;
 use App\Models\User;
+use App\Models\Role;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Hash;
+use App\Mail\UserCreatedMail;
 
 class UserController extends Controller
 {
-    const USERS_PER_PAGE = 5; // TODO change
-    const REQUESTS_PER_PAGE = 1; // TODO change
+    const USERS_PER_PAGE = 10;
+    const REQUESTS_PER_PAGE = 10;
 
     /**
      * Show all clients.
@@ -88,7 +92,7 @@ class UserController extends Controller
 
         if($deleteUser->isRemoved()) {
             return redirect()->back()
-                ->with('already_deleted', 'dashboard.users.actions.delete.already');
+                ->with('error', 'dashboard.users.actions.delete.already');
         }
 
         // prevent self-deleting
@@ -101,7 +105,48 @@ class UserController extends Controller
         }
 
         return redirect()->back()
-            ->with('self_delete_error', 'dashboard.users.actions.delete.self_fail');
+            ->with('error', 'dashboard.users.actions.delete.self_fail');
+    }
+
+    /**
+     * Show dashboard user's register page.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showRegisterPage()
+    {
+        return view('dashboard.users.register');
+    }
+
+    /**
+     * Register new user.
+     *
+     * @param RegisterUserRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function registerUser(RegisterUserRequest $request)
+    {
+        $password = $request->input('password');
+        $user = new User();
+
+        $user->setRole(Role::CLIENT_ROLE_ID);
+        $user->setName($request->input('name'));
+        $user->setEmail($request->input('email'));
+        $user->setPassword(Hash::make($password));
+
+        $isUserCreated = $user->save();
+
+        if($isUserCreated) {
+            Mail::to($user)->send(new UserCreatedMail($user, $password));
+
+            return redirect()
+                ->route('dashboard.users.manage')
+                ->with('success', 'dashboard.users.actions.create.success');
+        }
+
+        return redirect()->back()
+            ->withInput()
+            ->with('error', 'dashboard.users.actions.create.fail');
     }
 
     private function resetGivenPassword($user, $password)

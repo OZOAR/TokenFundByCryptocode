@@ -40,13 +40,23 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
             ->name('dashboard.profile.password.reset');
     });
 
+    // Dashboard requests routes
+    Route::group(['prefix' => '/requests'], function () {
+        $this->get('/', 'Dashboard\RequestController@showRequests')->name('dashboard.requests.index');
+        $this->get('/{id}', 'Dashboard\RequestController@showParticularRequest')
+            ->where('id', '[0-9]+')
+            ->name('dashboard.requests.show');
+    });
+
     // Dashboard users routes
     Route::group(['prefix' => '/users'], function () {
         $this->get('/', 'Dashboard\UserController@showUsers')->name('dashboard.users.manage');
+        $this->get('/register', 'Dashboard\UserController@showRegisterPage')->name('dashboard.users.register');
         $this->get('/{id}', 'Dashboard\UserController@showParticularUser')
             ->where('id', '[0-9]+')
             ->name('dashboard.users.show');
 
+        $this->post('/register', 'Dashboard\UserController@registerUser')->name('dashboard.users.register.post');
         $this->post('/password/reset', 'Dashboard\UserController@resetPassword')
             ->name('dashboard.users.password.reset');
         $this->post('/delete', 'Dashboard\UserController@deleteUser')->name('dashboard.users.delete');

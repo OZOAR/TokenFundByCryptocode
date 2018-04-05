@@ -25,8 +25,12 @@ return [
     ],
 
     'requests' => [
+        'title' => 'Requests',
+        'show_title' => 'Showing request',
         'empty_collection' => 'Requests list is empty.',
         'model' => [
+            'name' => 'Request',
+            'owner' => 'Sender',
             'created_at' => 'Created at',
             'message' => 'Message',
         ],
@@ -48,9 +52,11 @@ return [
     'users' => [
         'title' => 'Users',
         'manage' => 'Manage users',
+        'register' => 'Register a user',
         'model' => [
-            'username' => 'Username',
+            'name' => 'Username',
             'email' => 'Email',
+            'password' => 'Password',
             'registration_date' => 'Registration date',
             'last_pass_update' => 'Last password update'
         ],
@@ -63,7 +69,11 @@ return [
             'delete' => [
                 'success' => 'User successfully deleted.',
                 'self_fail' => 'You can\'t delete yourself.',
-                'already' => 'User is already deleted.',
+                'already' => 'The user already deleted.',
+            ],
+            'create' => [
+                'success' => 'User successfully deleted.',
+                'fail' => 'Can\'t create user. Server error.',
             ],
         ],
     ],

@@ -10,7 +10,11 @@
 
     @foreach($requests as $request)
     <tr>
-        <td>{{ $request->getId() }}</td>
+        <td>
+            <a href="{{ route('dashboard.requests.show', ['id' => $request->getId()]) }}">
+                <strong>{{ $request->getId() }}</strong>
+            </a>
+        </td>
         <td>{{ $request->getCreatedDate() }}</td>
         <td>{{ $request->getMessage() }}</td>
     </tr>

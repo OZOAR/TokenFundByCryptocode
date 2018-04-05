@@ -38,13 +38,13 @@ class Request extends Model
     }
 
     /**
-     * Get the role owner.
+     * Get the request owner.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function owner()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     /**

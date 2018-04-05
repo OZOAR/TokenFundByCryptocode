@@ -48,6 +48,26 @@ class User extends Authenticatable
     }
 
     /**
+     * Set name for user.
+     *
+     * @param bool $name
+     */
+    public function setName($name = null)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * Set name for user.
+     *
+     * @param bool $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
      * Set password for user.
      *
      * @param bool $password
@@ -55,6 +75,16 @@ class User extends Authenticatable
     public function setPassword($password)
     {
         $this->password = $password;
+    }
+
+    /**
+     * Set role id for user.
+     *
+     * @param bool $roleId
+     */
+    public function setRole($roleId)
+    {
+        $this->role_id = $roleId;
     }
 
     /**

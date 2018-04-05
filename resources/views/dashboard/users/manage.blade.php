@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <a href=""> <!-- TODO change link -->
+            <a href="{{ route('dashboard.users.register') }}">
                 <button type="button" class="btn btn-round btn-primary">
                     @lang('dashboard.button.register')
                 </button>
