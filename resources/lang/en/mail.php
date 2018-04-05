@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'from' => 'VidInvest Support',
     'welcome' => 'Hello',
     'subject' => 'VidInvest Registration',
     'information' => 'Here you can find information for accessing your private account',

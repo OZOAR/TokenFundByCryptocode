@@ -25,7 +25,7 @@ class UserCreatedMail extends Mailable
     public function __construct(User $user, $password)
     {
         $this->user = $user;
-        $this->password;
+        $this->password = $password;
     }
 
     /**
@@ -35,7 +35,8 @@ class UserCreatedMail extends Mailable
      */
     public function build()
     {
-        return $this->subject(__('mail.subject'))
+        return $this->from(env('MAIL_FROM_ADDRESS'), __('mail.from'))
+            ->subject(__('mail.subject'))
             ->view('mail.users.create')
             ->with(['user' => $this->user, 'password' => $this->password]);
     }
