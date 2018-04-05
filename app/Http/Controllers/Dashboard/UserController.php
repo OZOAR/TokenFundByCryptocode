@@ -137,7 +137,7 @@ class UserController extends Controller
         $isUserCreated = $user->save();
 
         if($isUserCreated) {
-            Mail::to($user)->send(new UserCreatedMail($user));
+            Mail::to($user)->send(new UserCreatedMail($user, $password));
 
             return redirect()
                 ->route('dashboard.users.manage')

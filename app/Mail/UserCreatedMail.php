@@ -14,15 +14,18 @@ class UserCreatedMail extends Mailable
     use Queueable, SerializesModels;
 
     protected $user;
+    protected $password;
 
     /**
      * Create a new message instance.
      *
      * @param User $user
+     * @param $password
      */
-    public function __construct(User $user)
+    public function __construct(User $user, $password)
     {
         $this->user = $user;
+        $this->password;
     }
 
     /**
@@ -34,6 +37,6 @@ class UserCreatedMail extends Mailable
     {
         return $this->subject(__('mail.subject'))
             ->view(__('mail.message'))
-            ->with('user', $this->user);
+            ->with(['user' => $this->user, 'password' => $this->password]);
     }
 }
