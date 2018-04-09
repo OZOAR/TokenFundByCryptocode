@@ -65,6 +65,6 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
 
 Route::get('/home', 'HomeController@index')->name('home'); // TODO remove
 
-Route::get('/profile', function () { // TODO change
-    return view('welcome');
+Route::get('/profile', function () {
+    return view('profile.index');
 })->name('profile');

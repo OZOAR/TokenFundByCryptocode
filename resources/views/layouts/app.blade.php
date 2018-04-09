@@ -1,79 +1,50 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+<html lang="en">
+@include('partials.head')
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
+  <header id="header"{!! isset($isProfile) && $isProfile ? ' class="header-color"': ''!!}>
+    <div class="wrapper clearfix">
+      <div class="logo">
+        <img src="images/logo-white.png" alt="">
+      </div>
+      <div class="navigation">
+        <nav>
+          <div class="language-switcher">
+            <form action="{{ route('locale.reset') }}">
+              <input type="hidden" name="lang" value="{{ (app()->getLocale() === 'en') ? 'ru' : 'en' }}">
+              <input type="submit" value="{{ app()->getLocale() }}">
+            </form>
+          </div>
+          @guest
+            <a href="#" class="loginCta">@lang('index.auth.login')<i class="fas fa-user"></i></a>
+          @else
+            <a href="#" class="logoutCta">@lang('index.auth.logout')<i class="fas fa-user"></i></a>
+          @endguest
         </nav>
-
-        @yield('content')
+      </div>
     </div>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+  </header>
+  @yield('content')
+  <footer>
+    <div class="wrapper">
+      <h2>@lang('index.footer.title')</h2>
+      <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+      <div class="footer-navigation">
+        <a href="#">FAQ</a>
+        <a href="#">White Paper</a>
+      </div>
+    </div>
+  </footer>
+  <div id="popupBg" class="hidden"></div>
+  @guest
+    @include('partials.login_form')
+  @else
+    @include('partials.logout_form')
+  @endguest
 </body>
 </html>

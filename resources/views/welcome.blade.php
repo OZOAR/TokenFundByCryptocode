@@ -1,96 +1,167 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel | <strong>{{ Session::get('locale') }}</strong>
-
-                    @include('partials.locale_reset')
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+@section('content')
+<main>
+  <div class="main-banner">
+    <div class="main-banner-absolute">
+      <div class="banner-summary">
+        <div class="wrapper">
+          <h1 id="title">@lang('index.banner.title')</span>
+          </h1>
+          <p>@lang('index.banner.subtitle')</p>
+          <p>@lang('index.banner.summary')</p>
+          <a href="#" class="button loginCta">@lang('index.banner.button')</a>
         </div>
-    </body>
-</html>
+      </div>
+    </div>
+  </div>
+  <div class="home-token-chart">
+    <h2>Live update</h2>
+    <div class="wrapper">
+      <div class="chart-img">
+        <img src="images/graph.png" alt="">
+      </div>
+      <div class="chart-summary">
+        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>
+        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>Ƀ748</span></p>
+        <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'): <span>693.86%</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="how-it-works">
+    <div class="wrapper">
+      <div class="how-summary">
+        <p>@lang('index.about.summary1')</p>
+        <p>@lang('index.about.summary2')</p>
+        <a href="#" class="button join-button">@lang('index.about.button')</a>
+      </div>
+      <div class="how-img">
+        <img src="images/blockchain3.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="number-items">
+    <div class="item">
+      <span>7854 k+</span>
+      <p>@lang('index.digits.1')</p>
+    </div>
+    <div class="item">
+      <span>548</span>
+      <p>@lang('index.digits.2')</p>
+    </div>
+    <div class="item">
+      <span>80 k+</span>
+      <p>@lang('index.digits.3')</p>
+    </div>
+    <div class="item">
+      <span>89</span>
+      <p>@lang('index.digits.4')</p>
+    </div>
+  </div>
+  <div class="currency-chart">
+    <div class="wrapper">
+      <div class="chart-img">
+        <img src="images/chart.png" alt="">
+      </div>
+      <div class="chart-summary">
+        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>
+        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>Ƀ748</span></p>
+        <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'): <span>693.86%</span></p>
+        <a href="#" class="button join-button">@lang('index.chart.invest')</a>
+      </div>
+    </div>
+  </div>
+  <div class="contacts">
+    <h2>Contact Us</h2>
+    <ul class="nav-tabs">
+      <li class="tab active">
+        <a href="#tabOne"><i class="fas fa-map-marker"></i>Russia</a>
+      </li>
+      <li class="tab">
+        <a href="#tabTwo"><i class="fas fa-map-marker"></i>Kazakhstan</a>
+      </li>
+      <li class="tab">
+        <a href="#tabThree"><i class="fas fa-map-marker"></i>Czech Republic</a>
+      </li>
+    </ul>
+    <div>
+    <div class="tab-content">
+      <div class="tab-pane" id="tabOne">
+        <div id="map-first" class="map"></div>
+        <div class="wrapper">
+          <div class="contacts-info">
+              <div class="address">
+                <i class="fas fa-location-arrow"></i>
+                <div class="address-info">
+                  <p>Russia, Moscow</p>
+                  <p>Протопопоский пер., 14, 129090</p>
+                </div>
+              </div>
+              <div class="phones">
+                <i class="fas fa-phone"></i>
+                <div class="phones-info">
+                  <p><a href="tel:+07090909000">+07090909000</a></p>
+                  <p><a href="tel:+07090909000">+07090909000</a></p>
+                </div>
+              </div>
+              <div class="email">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:vid_investfond@gmail.com">vid_investfond@gmail.com</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane hidden" id="tabTwo">
+        <div id="map-second" class="map"></div>
+        <div class="wrapper">
+          <div class="contacts-info">
+              <div class="address">
+                <i class="fas fa-location-arrow"></i>
+                <div class="address-info">
+                  <p>Алматы, Казахстан</p>
+                  <p>ул. Маркова, 26, 050040</p>
+                </div>
+              </div>
+              <div class="phones">
+                <i class="fas fa-phone"></i>
+                <div class="phones-info">
+                  <p><a href="tel:+07090909000">+07090909000</a></p>
+                  <p><a href="tel:+07090909000">+07090909000</a></p>
+                </div>
+              </div>
+              <div class="email">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:vid_investfond@gmail.com">vid_investfond@gmail.com</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane hidden" id="tabThree">
+        <div id="map-third" class="map"></div>
+        <div class="wrapper">
+          <div class="contacts-info">
+              <div class="address">
+                <i class="fas fa-location-arrow"></i>
+                <div class="address-info">
+                  <p>Prague, Czech Republic</p>
+                  <p>Nademlejnská 1069/20, 198 00</p>
+                </div>
+              </div>
+              <div class="phones">
+                <i class="fas fa-phone"></i>
+                <div class="phones-info">
+                  <p><a href="tel:+07090909000">+07090909000</a></p>
+                  <p><a href="tel:+07090909000">+07090909000</a></p>
+                </div>
+              </div>
+              <div class="email">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:vid_investfond@gmail.com">vid_investfond@gmail.com</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+@endsection
