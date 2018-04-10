@@ -51,8 +51,10 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
     // Dashboard statistics routes
     Route::group(['prefix' => '/statistics'], function () {
         $this->get('/', 'Dashboard\StatisticsController@showStatisticsPage')->name('dashboard.statistics.index');
-        $this->post('/upgrade/graph/first', 'Dashboard\StatisticsController@upgradeFirstGraph')
-            ->name('dashboard.statistics.upgrade.graph.first');
+        $this->post('/upgrade/graph/main', 'Dashboard\StatisticsController@upgradeMainGraph')
+            ->name('dashboard.statistics.upgrade.graph.main');
+        $this->post('/upgrade/graph/portfolio', 'Dashboard\StatisticsController@upgradePortfolioGraph')
+            ->name('dashboard.statistics.upgrade.graph.portfolio');
     });
 
     // Dashboard users routes
