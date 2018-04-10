@@ -38,6 +38,7 @@ return [
 
     'statistics' => [
         'title' => 'Statistics',
+        'preview' => 'Preview',
     ],
 
     'users' => [
@@ -85,6 +86,7 @@ return [
     'button' => [
         'submit' => 'Submit',
         'reset' => 'Reset',
+        'update' => 'Update',
         'view' => 'View',
         'register' => 'Register new',
         'delete' => 'Delete',
