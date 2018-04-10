@@ -38,6 +38,7 @@ return [
 
     'statistics' => [
         'title' => 'Statistics',
+        'main_graph_title' => 'Main graph',
         'preview' => 'Preview',
         'empty' => 'Haven\'t any items.',
         'transaction_fail' => 'Can\'t update graph data. Maybe you have duplicates.',
