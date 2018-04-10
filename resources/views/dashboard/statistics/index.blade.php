@@ -85,6 +85,6 @@
         </div>
     </div>
 
-    @include('partials.dashboard.statistics.first_graph')
-    @include('partials.dashboard.statistics.second_graph')
+    @include('partials.dashboard.statistics.main_graph')
+    @include('partials.dashboard.statistics.portfolio_graph')
 @endsection
