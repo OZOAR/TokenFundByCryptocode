@@ -5,7 +5,7 @@ namespace App\Import;
 use Maatwebsite\Excel\Exceptions\LaravelExcelException;
 use \Maatwebsite\Excel\Files\ExcelFile;
 
-class MainGraphImport extends ExcelFile
+class GraphImport extends ExcelFile
 {
     const EXCEL_FILENAME = 'excel-data-file';
 
@@ -17,9 +17,13 @@ class MainGraphImport extends ExcelFile
     public function getFile(): string
     {
         $request = request();
+        $isPreview = (bool) $request->input('is-preview');
+
+        if(!$isPreview) {
+            // TODO save file to storage
+        }
 
         if ($request->hasFile(self::EXCEL_FILENAME)) {
-            // TODO save file to storage
             $file = $request->file(self::EXCEL_FILENAME);
             return $file->path();
         }
