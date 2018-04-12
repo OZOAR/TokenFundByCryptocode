@@ -13,8 +13,9 @@ class ClientProfileController extends Controller
      */
     public function showProfile()
     {
+        $title = __('profile.title');
         $client = Auth::user();
 
-        return view('profile.show')->with(compact('client'));
+        return view('profile.show')->with(compact(['client', 'title']));
     }
 }

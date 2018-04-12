@@ -9,7 +9,7 @@
           <img src="images/user.png" alt="">
         </div>
         <div class="user-email">
-          <p>admin@gmail.com</p>
+          <p>{{ $client->getEmail() }}</p>
         </div>
       </div>
       <div class="token-info">

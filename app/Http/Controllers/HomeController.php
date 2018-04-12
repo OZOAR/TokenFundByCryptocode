@@ -11,6 +11,8 @@ class HomeController extends Controller
      */
     public function showIndexPage()
     {
-        return view('welcome');
+        $title = config('app.name', 'vidInvest');
+
+        return view('welcome')->with(compact('title'));
     }
 }
