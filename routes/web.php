@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+$this->get('/', 'HomeController@showIndexPage')->name('index');
 
 // Reset website locale
 $this->get('locale/reset', 'LocalizationController@changeLocale')->name('locale.reset');
