@@ -18,4 +18,10 @@ $(document).ready(function(){
       $('.navigation a').css('line-height', '90px');
     }
   });
-})
+});
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});

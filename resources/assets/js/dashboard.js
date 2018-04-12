@@ -14,3 +14,4 @@ require('parsleyjs');
 
 window.moment = require('moment');
 require('bootstrap-daterangepicker/daterangepicker');
+require('icheck');
