@@ -7,7 +7,7 @@ $(document).ready(function() {
     var msg = $signInForm.serialize();
     $.ajax({
       type: 'POST',
-      url: 'http://5acb5a4b5ee1f30014898ce4.mockapi.io/api/login',
+      url: '/login',
       data: msg,
       success: function(data) {
         if (!data.success) {
