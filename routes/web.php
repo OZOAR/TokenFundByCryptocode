@@ -71,8 +71,6 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
     });
 });
 
-Route::get('/home', 'HomeController@index')->name('home'); // TODO remove
-
-Route::get('/profile', function () {
-    return view('profile.index');
-})->name('profile');
+Route::group(['prefix' => '/profile', 'middleware' => ['auth']], function () {
+    $this->get('/', 'ClientProfileController@showProfile')->name('profile.show');
+});
