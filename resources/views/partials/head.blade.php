@@ -17,6 +17,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpxglI-rL4d2J_PRe1uixVbWFRgvWsQCs"></script>
     <script src=/js/map.js></script>
     <script src=/js/tabs.js></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src=/js/portfolioChart.js></script>
   @else
     <script src=/js/logout.js></script>
   @endguest

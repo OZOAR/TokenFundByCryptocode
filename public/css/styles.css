@@ -165,7 +165,7 @@ main.margin-main{
 }
 .button {
   display: block;
-  width: 150px;
+  width: 160px;
   height: 50px;
   border-radius: 30px;
   background-color: #fff;
@@ -186,8 +186,9 @@ main.margin-main{
   padding: 70px 0;
 }
 .home-token-chart h2,
-.contacts h2 {
-  font-family: 'WalkwayBold';
+.contacts h2,
+.how-it-works h2 {
+  font-family: 'WalkwayBold', Ubuntu;
   font-size: 4.2rem;
   font-weight: 300;
   text-align: center;
@@ -207,11 +208,31 @@ main.margin-main{
   width: 100%;
   max-width: 500px;
 }
-.chart-img,
-.chart-summary,
+.highcharts-button,
+.highcharts-credits,
+.highcharts-title {
+  display: none;
+}
+.highcharts-background {
+  fill: transparent !important;
+}
 .how-img,
 .how-summary {
   flex-basis: 50%;
+  text-align: center;
+}
+.chart-img {
+  flex-basis: 60%;
+}
+.chart-summary {
+  flex-basis: 40%;
+}
+.how-summary .link {
+  display: inline-block;
+  color: #2c6274;
+  font-size: 2.1rem;
+  margin-top: 30px;
+  text-decoration: underline;
 }
 .chart-summary p {
   color: #898989;
@@ -331,6 +352,22 @@ footer h2 {
 }
 .footer-navigation a:not(:first-child) {
   margin-lefT: 40px;
+}
+footer p {
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  font-weight: lighter;
+}
+.footer-info {
+  border-top: 0.5px solid #fff;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+.footer-info p {
+  font-size: 1.2rem;
+  margin-top: 0;
 }
 
 /*Sign In/Sign Up Forms*/

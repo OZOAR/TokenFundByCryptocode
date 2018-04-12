@@ -4,34 +4,26 @@ $(document).ready(function() {
   var $errorMessage = $('.sign-in .error-message');
 
   function checkExistingUser() {
-    var email = $signInForm.find('.email input').val();
-    var password = $signInForm.find('.password input').val();
-
-    if(email === 'admin@gmail.com' && password ==="admin") {
-      $errorMessage.addClass('hidden');
-      window.location.href = '/user.html';
-    }
-    else {
-      $errorMessage.removeClass('hidden');
-    }
-    // var msg = $signInForm.serialize();
-    // $.ajax({
-    //   type: 'POST',
-    //   url: '/bla',
-    //   data: msg,
-    //   success: function(data) {
-    //     if (data === 'Login') {
-    //       $errorMessage.addClass('hidden');
-    //       window.location.href = '/user.html';
-    //     }
-    //     else {
-    //       $errorMessage.removeClass('hidden');
-    //     }
-    //   },
-    //   error: function(xhr, str) {
-    //     alert('Error:' xhr.responceCode);
-    //   }
-    // });
+    var msg = $signInForm.serialize();
+    $.ajax({
+      type: 'POST',
+      url: 'http://5acb5a4b5ee1f30014898ce4.mockapi.io/api/login',
+      data: msg,
+      success: function(data) {
+        if (!data.success) {
+          if (data.message) {
+            $errorMessage.removeClass('hidden');
+          }
+        }
+        else {
+          $errorMessage.addClass('hidden');
+          window.location.href = data.redirectTo;
+        }
+      },
+      error: function(xhr, str) {
+        alert('Error:', xhr.responceCode);
+      }
+    });
   }
 
   $signInButton.on('click', function() {

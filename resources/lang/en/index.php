@@ -8,14 +8,17 @@ return [
           'email' =>'E-mail address',
           'password' => 'Password',
           'remember' => 'Remember me',
-          'new_user' => 'New here?'
+          'new_user' => 'New here?',
+          'error_message' => 'Please enter valid data'
         ],
         'sign_up' => [
           'sign_up' => 'Sign Up',
           'summary' => 'Please fill your email and we will create your account',
           'email' => 'E-mail address',
           'button' => 'Join',
-          'existing_user' => 'Already a member?'
+          'existing_user' => 'Already a member?',
+          'success_message' => 'Thanks for joining. We will connect with you!',
+          'error_message' => 'Email already exist'
         ],
       ],
       'logout'  => 'Logout',
@@ -33,8 +36,7 @@ return [
     'invest' => 'Invest Now'
   ],
   'about' => [
-    'summary1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, repellendus atque asperiores dignissimos voluptates illo repudiandae incidunt unde explicabo. Possimus obcaecati labore officia. Saepe iusto nostrum accusamus, sapiente, eaque provident.',
-    'summary2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit nostrum suscipit pariatur aliquid vero eos neque ex nulla dolores unde voluptatem.',
+    'summary1' => 'With the unprecedented rise of cryptocurrencies and blockchain technology, new opportunities are arising in field of investment.',
     'button' => 'Join now'
   ],
   'digits' => [
@@ -43,8 +45,25 @@ return [
     '3' => 'Working Hours',
     '4' => 'No. of Clients'
   ],
-  'address' => [
-
+  'contacts' => [
+    'title' => 'Contact Us',
+    'address' => [
+      'one' => [
+        'tab_name' => 'Russia',
+        'country' => 'Russia, Moscow',
+        'street' => 'Протопопоский пер., 14, 129090'
+      ],
+      'two' => [
+        'tab_name' => 'Kazakhstan',
+        'country' => 'Алматы, Казахстан',
+        'street' => 'ул. Маркова, 26, 050040'
+      ],
+      'three' => [
+        'tab_name' => 'Czech Republic',
+        'country' => 'Prague, Czech Republic',
+        'street' => 'Nademlejnská 1069/20, 198 00'
+      ]
+    ]
   ],
   'footer' => [
     'title' => 'Join Us'
