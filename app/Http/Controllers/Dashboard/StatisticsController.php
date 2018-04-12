@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Dashboard\UpgradeFirstGraphRequest;
+use App\Http\Requests\Dashboard\UpgradeGraphRequest;
 use App\Import\GraphImport;
 use App\Models\MainGraph;
+use App\Models\PortfolioGraph;
 use Illuminate\Support\Facades\DB;
 
 class StatisticsController extends Controller
@@ -21,12 +22,14 @@ class StatisticsController extends Controller
     /**
      * Upgrade main graph with preview mode or without.
      *
-     * @param UpgradeFirstGraphRequest $request
+     * @param UpgradeGraphRequest $request
      * @param GraphImport $import
      * @return \Illuminate\Http\JsonResponse
      */
-    public function upgradeFirstGraph(UpgradeFirstGraphRequest $request, GraphImport $import)
+    public function upgradeMainGraph(UpgradeGraphRequest $request, GraphImport $import)
     {
+        // TODO add ORDER BY date
+        // TODO retrieve only by last week
         $isPreview = (bool)$request->input('is-preview');
 
         $sheet = $import->remember(self::CACHE_TIME_EXCEL)->first(); // first sheet
@@ -58,6 +61,78 @@ class StatisticsController extends Controller
         }
 
         return response()->json($points);
+    }
+
+    /**
+     * Upgrade portfolio graph with preview mode or without.
+     *
+     * @param UpgradeGraphRequest $request
+     * @param GraphImport $import
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function upgradePortfolioGraph(UpgradeGraphRequest $request, GraphImport $import)
+    {
+        // TODO add ORDER BY date
+        // TODO retrieve only by last week
+        $isPreview = (bool)$request->input('is-preview');
+
+        $sheet = $import->remember(self::CACHE_TIME_EXCEL)->first(); // first sheet
+        $points = $this->filterPortfolioGraphPoints($sheet->all());
+
+        if ($points === null) {
+            return response()->json(['message' => __('dashboard.statistics.empty'),
+                'code' => 403
+            ], 403);
+        }
+
+        if ($isPreview) {
+            return response()->json($points);
+        }
+
+        try {
+            DB::beginTransaction();
+
+            // TODO insert OR update if exists
+            //PortfolioGraph::insert($points);
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'message' => __('dashboard.statistics.transaction_fail'),
+                'code' => 403
+            ], 403);
+        }
+
+        return response()->json($points);
+    }
+
+    protected function filterPortfolioGraphPoints($rows = null)
+    {
+        if ($rows === null) {
+            return null;
+        }
+
+        $existsData = PortfolioGraph::all();
+
+        if ($existsData->isNotEmpty()) {
+            // TODO вынести непересекающие элементы в отдельный массив
+            // TODO сделать insert этих элементов
+            // TODO остальные проапдейтить
+
+            foreach ($points as $key => $value) {
+                if (in_array($value->id, $unique)) {
+                    $doubles[] = $value;
+                    unset($array[$key]);
+                } else {
+                    $unique[] = $value->id;
+                }
+            }
+
+
+            // TODO implement
+        }
     }
 
     protected function filterMainGraphPoints($rows = null)
