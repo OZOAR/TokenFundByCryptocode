@@ -1,21 +1,25 @@
 $(document).ready(function(){
+var $header = $('#headerHome'),
+    $logo = $header.find('.logo img'),
+    $navLinks = $header.find('.navigation a');
+
   $(window).scroll(function() {
     var scrollen = $(document).scrollTop();
     if (scrollen >= 50) {
-      $('#header').css({
+      $header.css({
         'background-color': '#142C34',
         'opacity': '0.8'
       });
-      $('.logo img').css('width', '70px');
-      $('.navigation a').css('line-height', '70px');
+      $logo.css('width', '70px');
+      $navLinks.css('line-height', '70px');
     }
     else {
-      $('#header').css({
+      $header.css({
         'background-color': 'transparent',
         'opacity': '1'
       });
-      $('.logo img').css('width', '90px');
-      $('.navigation a').css('line-height', '90px');
+      $logo.css('width', '90px');
+      $navLinks.css('line-height', '90px');
     }
   });
 });
