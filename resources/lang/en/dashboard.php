@@ -36,17 +36,13 @@ return [
         ],
     ],
 
-    'sidebar' => [
-        'menu' => [
-            'home' => 'Home',
-            'users' => [
-                'index'    => 'Users',
-                'manage'   => 'Manage',
-                'register' => 'Register new',
-            ],
-            'requests' => 'Requests',
-            'statistics' => 'Statistics',
-        ],
+    'statistics' => [
+        'title' => 'Statistics',
+        'main_graph_title' => 'Main graph',
+        'portfolio_graph_title' => 'Portfolio graph',
+        'preview' => 'Preview',
+        'empty' => 'Haven\'t any items.',
+        'transaction_fail' => 'Can\'t update graph data. Maybe you have duplicates.',
     ],
 
     'users' => [
@@ -78,9 +74,23 @@ return [
         ],
     ],
 
+    'sidebar' => [
+        'menu' => [
+            'home' => 'Home',
+            'users' => [
+                'index'    => 'Users',
+                'manage'   => 'Manage',
+                'register' => 'Register new',
+            ],
+            'requests' => 'Requests',
+            'statistics' => 'Statistics',
+        ],
+    ],
+
     'button' => [
         'submit' => 'Submit',
         'reset' => 'Reset',
+        'update' => 'Update',
         'view' => 'View',
         'register' => 'Register new',
         'delete' => 'Delete',

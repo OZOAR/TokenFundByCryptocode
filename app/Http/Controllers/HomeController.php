@@ -2,27 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Show welcome page.
      *
-     * @return void
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function __construct()
+    public function showIndexPage()
     {
-        $this->middleware('auth');
-    }
+        $title = config('app.name', 'vidInvest');
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('home');
+        return view('welcome')->with(compact('title'));
     }
 }

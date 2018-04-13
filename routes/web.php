@@ -11,16 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+$this->get('/', 'HomeController@showIndexPage')->name('index');
 
 // Reset website locale
 $this->get('locale/reset', 'LocalizationController@changeLocale')->name('locale.reset');
 
 // Authentication Routes...
-$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-$this->post('login', 'Auth\LoginController@login');
+$this->post('login', 'Auth\LoginController@loginPost');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Password Reset Routes...
@@ -48,6 +45,15 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
             ->name('dashboard.requests.show');
     });
 
+    // Dashboard statistics routes
+    Route::group(['prefix' => '/statistics'], function () {
+        $this->get('/', 'Dashboard\StatisticsController@showStatisticsPage')->name('dashboard.statistics.index');
+        $this->post('/upgrade/graph/main', 'Dashboard\StatisticsController@upgradeMainGraph')
+            ->name('dashboard.statistics.upgrade.graph.main');
+        $this->post('/upgrade/graph/portfolio', 'Dashboard\StatisticsController@upgradePortfolioGraph')
+            ->name('dashboard.statistics.upgrade.graph.portfolio');
+    });
+
     // Dashboard users routes
     Route::group(['prefix' => '/users'], function () {
         $this->get('/', 'Dashboard\UserController@showUsers')->name('dashboard.users.manage');
@@ -63,8 +69,6 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['admin']], function () 
     });
 });
 
-Route::get('/home', 'HomeController@index')->name('home'); // TODO remove
-
-Route::get('/profile', function () { // TODO change
-    return view('welcome');
-})->name('profile');
+Route::group(['prefix' => '/profile', 'middleware' => ['auth']], function () {
+    $this->get('/', 'ClientProfileController@showProfile')->name('profile.show');
+});
