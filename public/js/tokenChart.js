@@ -1,12 +1,37 @@
 $(document).ready(function() {
-  var data = [
-    [Date.parse('2018-03-18'), 0.8218],
-    [Date.parse('2018-03-19'), 0.8893],
-    [Date.parse('2018-03-20'), 0.9155],
-    [Date.parse('2018-03-21'), 0.8218],
-    [Date.parse('2018-03-22'), 0.8954]
-  ];
-  Highcharts.chart('tokenChart', {
+  var chartUSDId = 'tokenChartUSD',
+      chartBTCId = 'tokenChartBTC',
+      labelUSD = 'USD',
+      labelBTC = 'BTC',
+      dataUSD = [
+      [Date.parse('2018-03-18'), 0.8218],
+      [Date.parse('2018-03-19'), 0.8893],
+      [Date.parse('2018-03-20'), 0.9155],
+      [Date.parse('2018-03-21'), 0.8218],
+      [Date.parse('2018-03-22'), 0.8954]
+    ],
+    dataBTC = [
+      [Date.parse('2018-03-18'), 0.00010766],
+      [Date.parse('2018-03-19'), 0.00010682],
+      [Date.parse('2018-03-20'), 0.00011143],
+      [Date.parse('2018-03-21'), 0.0001118],
+      [Date.parse('2018-03-22'), 0.00010766]
+    ];
+
+
+    // var dashboardUploadButton = $('#upload-main-graph-form button');
+    //     dashboardUploadFileInput =  $('#upload-main-graph-form input:file');
+    //     dashboardUploadPreviewInput =  $('#upload-main-graph-form input:checkbox');
+    // dashboardUploadButton.on('click', function() {
+    //
+    // });
+  initChart(dataUSD, chartUSDId, labelUSD);
+  initChart(dataBTC, chartBTCId, labelBTC);
+});
+
+
+function initChart(data, id, label) {
+  Highcharts.chart(id, {
       chart: {
           zoomType: 'x'
       },
@@ -21,7 +46,7 @@ $(document).ready(function() {
       },
       yAxis: {
           title: {
-              text: 'TKN price(USD)'
+              text: 'TKN price (' + label + ')'
           }
       },
       legend: {
@@ -55,8 +80,8 @@ $(document).ready(function() {
       },
       series: [{
           type: 'area',
-          name: 'TKN price in USD',
+          name: 'TKN price in ' + label,
           data: data
       }]
   });
-});
+}

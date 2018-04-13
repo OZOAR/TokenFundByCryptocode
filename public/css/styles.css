@@ -204,6 +204,28 @@ main.margin-main{
   justify-content: space-between;
   align-items: center;
 }
+.chart-element .nav-tabs {
+  margin-bottom: 20px;
+}
+.chart-element .tab {
+  display: inline-block;
+  width: 48%;
+}
+.chart-element .tab a {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #2c6274;
+  font-weight: lighter;
+  background-color: #f5f5f7;
+}
+.chart-element .tab.active a {
+  border-bottom: 2px solid #2c6274;
+  background-color: #fff;
+}
 .highcharts-button,
 .highcharts-credits,
 .highcharts-title {
@@ -217,10 +239,12 @@ main.margin-main{
   flex-basis: 50%;
   text-align: center;
 }
-.chart-element {
+.home-token-chart .chart-element,
+.portfolio-chart .chart-element {
   flex-basis: 60%;
 }
-.chart-summary {
+.home-token-chart .chart-summary,
+.portfolio-chart .chart-summary {
   flex-basis: 40%;
 }
 .how-summary .link {
@@ -565,15 +589,7 @@ footer p {
 
 /*User Page*/
 .user-info .wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 70px 0;
-}
-.personal-info,
-.token-info {
-  flex-basis: 50%;
-  margin: 0 auto;
+  padding: 40px 0;
 }
 .user-img img {
   max-width: 150px;
@@ -589,52 +605,21 @@ footer p {
   color: #2c6274;
   margin-top: 15px;
 }
-.token-info .chart-summary p {
-  width: auto;
-  margin-left: 0;
-}
-.token-info .chart-summary p:first-child {
-  margin-bottom: 50px;
-}
-.token-info .chart-summary p:not(:first-child) {
-  font-size: 1.8rem;
-}
 .personal-token-chart p {
   text-align: center;
 }
 .personal-charts .wrapper {
-  display: flex;
-  flex-direction: row;
-  padding: 70px 0;
+  padding: 20px 0 70px;
 }
 .personal-charts h2 {
   text-align: center;
   font-size: 3.2rem;
   color: #2c6274;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   font-weight: lighter;
 }
-.porfolio-chart {
-  flex-basis: 50%;
-}
-.personal-token-chart {
-  flex-basis: 50%;
-}
-.porfolio-chart {
-  display: inline-block;
-  text-align: center;
-}
-.porfolio-chart img {
-  max-width: 70%;
-}
-.personal-token-chart img {
-  max-width: 100%;
-}
-.ask-payout .wrapper {
-  padding: 50px 0;
-}
 .ask-payout .button {
-  margin: 0 auto;
+  margin: 30px auto;
   background-color: #2c6274;
   color: #fff;
 }
@@ -658,16 +643,16 @@ footer p {
 .contacts {
   padding-top: 70px;
 }
-.nav-tabs {
+.contacts .nav-tabs {
   display: block;
   margin: 50px auto 0;
   font-size: 0;
 }
-.nav-tabs .tab {
+.contacts .nav-tabs .tab {
   display: inline-block;
   width: 33.333333%;
 }
-.nav-tabs .tab a {
+.contacts .nav-tabs .tab a {
   display: inline-block;
   width: 100%;
   height: 70px;
@@ -681,18 +666,18 @@ footer p {
   border: 1px solid #EAEAEA;
   border-bottom: none;
 }
-.nav-tabs .tab:first-child a {
+.contacts .nav-tabs .tab:first-child a {
   border-left: none;
 }
-.nav-tabs .tab:last-child a {
+.contacts .nav-tabs .tab:last-child a {
   border-right: none;
 }
-.nav-tabs .tab a>svg {
+.contacts .nav-tabs .tab a>svg {
   display: block;
   margin: 0 auto;
   margin-bottom: 7px;
 }
-.nav-tabs .tab.active a {
+.contacts .nav-tabs .tab.active a {
   border-top: 2px solid #2c6274;
   background-color: #fff;
 }

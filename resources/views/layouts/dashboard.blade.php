@@ -10,6 +10,13 @@
 
     <link href="{{ asset('css/dashboard/dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard/custom.min.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src=/js/portfolioChart.js></script>
+    <script src=/js/tokenChart.js></script>
 </head>
 
 <body class="nav-md">

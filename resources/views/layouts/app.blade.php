@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('partials.head')
-<body>
+<body {!! isset($isProfile) && $isProfile ? 'class="userPage"': 'class="homePage"'!!}>
   <header {!! isset($isProfile) && $isProfile ? '': 'id="headerHome"'!!}{!! isset($isProfile) && $isProfile ? ' class="header-color"': ''!!}>
     <div class="wrapper clearfix">
       <div class="logo">
-        <img src="images/logo-white.png" alt="">
+        <a href="/"><img src="images/logo-white.png" alt=""></a>
       </div>
       <div class="navigation">
         <nav>

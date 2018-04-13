@@ -1,12 +1,17 @@
 $(document).ready(function() {
-  var tab = $('.nav-tabs .tab');
-  var tabContent = $('.tab-content .tab-pane');
+  initTabs($('.home-token-chart'));
+  initTabs($('.contacts'));
+})
 
-  tab.each(function() {
+function initTabs($parent) {
+  var tabs = $parent.find('.nav-tabs .tab');
+  var tabContent = $parent.find('.tab-content .tab-pane');
+
+  tabs.each(function() {
     $(this).on('click', function(e) {
       e.preventDefault();
       var tabContentId = $(this).find('a').attr('href');
-      tab.each(function() {
+      tabs.each(function() {
         $(this).removeClass('active');
       })
       $(this).addClass('active');
@@ -18,4 +23,4 @@ $(document).ready(function() {
       });
     });
   });
-})
+}

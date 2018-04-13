@@ -9,7 +9,7 @@ return [
           'password' => 'Пароль',
           'remember' => 'Запомнить меня',
           'new_user' => 'Еще не зарегистрированы?',
-          'error_message' => 'Please enter valid data'
+          'error_message' => 'Пожалуйста, введите корректные данные'
         ],
         'sign_up' => [
           'sign_up' => 'Зарегистрироваться',
@@ -17,12 +17,15 @@ return [
           'email' => 'E-mail адрес',
           'join' => 'Отправить',
           'existing_user' => 'Уже зарегестрированы?',
-          'success_message' => 'Thanks for joining. We will connect with you!',
-          'error_message' => 'Email already exist'
+          'success_message' => 'Спасибо за заявку. Мы свяжемся с Вами в ближайшее время!',
+          'error_message' => 'Email уже существует'
         ],
       ],
       'logout'  => 'Выйти',
-      'login' => 'Войти'
+      'login' => 'Войти',
+      'logout_message' => 'Вы уверены, что хотите выйти?',
+      'yes' => 'Да',
+      'no' => 'Нет'
   ],
   'banner' => [
     'title' => 'Думать. Все остальное - копромисс',
@@ -60,7 +63,7 @@ return [
       ],
       'three' => [
         'tab_name' => 'Чехия',
-        'country' => 'Prague, Czech Republic',
+        'country' => 'Прага, Чехия',
         'street' => 'Nademlejnská 1069/20, 198 00'
       ]
     ]

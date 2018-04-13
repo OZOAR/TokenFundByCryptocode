@@ -22,7 +22,10 @@ return [
         ],
       ],
       'logout'  => 'Logout',
-      'login' => 'Login'
+      'logout_message' => 'Are you sure you want sign out?',
+      'login' => 'Login',
+      'yes' => 'yes',
+      'no' => 'no'
   ],
   'banner' => [
     'title' => 'Dream Big. Do Different',
