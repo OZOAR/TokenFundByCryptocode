@@ -18,8 +18,8 @@
   <div class="home-token-chart">
     <h2>Live update</h2>
     <div class="wrapper">
-      <div class="chart-img">
-        <img src="images/graph.png" alt="">
+      <div class="chart-element">
+        <div id="tokenChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
       </div>
       <div class="chart-summary">
         <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>
@@ -59,10 +59,10 @@
       <p>@lang('index.digits.4')</p>
     </div>
   </div>
-  <div class="currency-chart">
+  <div class="portfolio-chart">
     <div class="wrapper">
-      <div class="chart-img">
-        <div id="portfolio-chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+      <div class="chart-element">
+        <div id="portfolioChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
       </div>
       <div class="chart-summary">
         <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>

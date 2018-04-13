@@ -2,6 +2,7 @@ $(document).ready(function() {
   var $signInButton = $('#signInButton');
   var $signInForm = $('#signInForm');
   var $errorMessage = $('.sign-in .error-message');
+  var $errorMessageServer = $('.sign-in .error-message-server');
 
   function checkExistingUser() {
     var msg = $signInForm.serialize();
@@ -10,25 +11,33 @@ $(document).ready(function() {
       url: '/login',
       data: msg,
       success: function(data) {
-        if (!data.success) {
-          if (data.message) {
-            $errorMessage.removeClass('hidden');
+        $errorMessageServer.find('p').html('');
+        $errorMessageServer.addClass('hidden');
+        window.location.href = data.redirectTo;
+      },
+      error: function(xhr, str) {
+        var data = xhr.responseJSON;
+        $errorMessageServer.find('p').html('');
+        $errorMessageServer.removeClass('hidden');
+        if (data.errors) {
+          for(key in data.errors) {
+            $errorMessageServer.find('p').html($errorMessageServer.find('p').html() + data.errors[key] + '<br />');
           }
         }
         else {
-          $errorMessage.addClass('hidden');
-          window.location.href = data.redirectTo;
+          $errorMessageServer.find('p').html(data.message);
         }
-      },
-      error: function(xhr, str) {
-        alert('Error:', xhr.responceCode);
       }
     });
   }
 
-  $signInButton.on('click', function() {
+  $signInButton.on('click', function(e) {
     var elementsList = $('#signInForm').find('.form-element');
     var isFormValide = true;
+
+    $errorMessage.addClass('hidden');
+    $errorMessageServer.addClass('hidden');
+
     elementsList.each(function() {
       if($(this).hasClass('incorrect-field')) {
         isFormValide = false;
@@ -36,6 +45,10 @@ $(document).ready(function() {
     });
     if (isFormValide) {
       checkExistingUser();
+    }
+    else {
+      e.preventDefault();
+      $errorMessage.removeClass('hidden');
     }
   });
 });

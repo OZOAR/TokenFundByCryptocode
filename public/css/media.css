@@ -6,10 +6,10 @@
 }
 @media screen and (max-width:750px) {
   .home-token-chart .wrapper,
-  .currency-chart .wrapper {
+  .portfolio-chart .wrapper {
     display: block;
   }
-  .chart-img,
+  .chart-element,
   .chart-summary {
     width: 100%;
     margin: 0 auto;

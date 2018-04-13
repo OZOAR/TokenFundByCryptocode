@@ -3,6 +3,7 @@
     <div class="login-form-wrapper sign-in">
         <h2>@lang('index.auth.form.sign_in.sign_in')</h2>
         <div class="error-message hidden"><p>@lang('index.auth.form.sign_in.error_message')</p></div>
+        <div class="error-message-server hidden"><p></p></div>
         <form id="signInForm">
             <div class="email form-element">
                 <input type="email" name="email" placeholder="@lang('index.auth.form.sign_in.email')">

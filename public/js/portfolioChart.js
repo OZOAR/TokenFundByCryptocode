@@ -1,5 +1,5 @@
 $(document).ready(function() {
-Highcharts.chart('portfolio-chart', {
+Highcharts.chart('portfolioChart', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -11,15 +11,12 @@ Highcharts.chart('portfolio-chart', {
     },
     plotOptions: {
         pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                style: {
-                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                }
-            }
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+              enabled: false
+          },
+          showInLegend: true
         }
     },
     series: [{
@@ -47,7 +44,7 @@ Highcharts.chart('portfolio-chart', {
             name: 'ICON',
             y: 1.6
         }, {
-            name: 'QX',
+            name: 'QQ',
             y: 1.2
         }, {
             name: 'Other',

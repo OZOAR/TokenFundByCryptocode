@@ -28,9 +28,18 @@
         <h2>Your investment</h2>
         <p><img src="images/graph.png" alt=""></p>
       </div>
-      <div class="porfolio-chart">
-        <h2>Portfolio</h2>
-        <p><img src="images/chart.png" alt=""></p>
+    </div>
+  </div>
+  <div class="portfolio-chart">
+    <div class="wrapper">
+      <div class="chart-element">
+        <div id="portfolio-chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+      </div>
+      <div class="chart-summary">
+        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>
+        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>Ƀ748</span></p>
+        <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'): <span>693.86%</span></p>
+        <a href="#" class="button join-button">@lang('index.chart.invest')</a>
       </div>
     </div>
   </div>
