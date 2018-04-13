@@ -19,11 +19,26 @@
     <h2>Live update</h2>
     <div class="wrapper">
       <div class="chart-element">
-        <div id="tokenChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+        <ul class="nav-tabs">
+          <li class="tab active">
+            <a href="#tabUSD">@lang('index.chart.token_price') USD</a>
+          </li>
+          <li class="tab">
+            <a href="#tabBTC">@lang('index.chart.token_price') BTC</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" id="tabUSD">
+            <div id="tokenChartUSD" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+          </div>
+          <div class="tab-pane hidden" id="tabBTC">
+            <div id="tokenChartBTC" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+          </div>
+        </div>
       </div>
       <div class="chart-summary">
-        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>
-        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>Ƀ748</span></p>
+        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') USD: <span>$469</span></p>
+        <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') BTC: <span>Ƀ748</span></p>
         <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'): <span>693.86%</span></p>
       </div>
     </div>

@@ -7,11 +7,10 @@
             </div>
             <div class="x_content">
                 <br/>
-                <div class="col-md-6">
-                    <!-- TODO include portfolio graph -->
-                    portfolio graph here
+                <div class="col-md-12">
+                    <div id="portfolioChart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <!-- TODO change to AJAX query -->
                     @include('partials.dashboard.statistics.upload_form',
                         ['route' => route('dashboard.statistics.upgrade.graph.portfolio'),

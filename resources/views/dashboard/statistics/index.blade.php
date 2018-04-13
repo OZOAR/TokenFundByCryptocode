@@ -1,5 +1,13 @@
 @extends('layouts.dashboard', ['pageTitle' => __('dashboard.statistics.title')])
 
+@section('scripts')
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src=/js/portfolioChart.js></script>
+<script src=/js/tokenChart.js></script>
+@endsection
+
 @section('content')
     <!-- Statistics content here -->
     <div class="row">

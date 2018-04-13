@@ -13,21 +13,18 @@
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    @guest
-        <script src=/js/index.js></script>
-        <script src=/js/textAnimation.js></script>
-        <script src=/js/form.js></script>
-        <script src=/js/signInUser.js></script>
-        <script src=/js/signUpUser.js></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpxglI-rL4d2J_PRe1uixVbWFRgvWsQCs"></script>
-        <script src=/js/map.js></script>
-        <script src=/js/tabs.js></script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
-        <script src=/js/portfolioChart.js></script>
-        <script src=/js/tokenChart.js></script>
-    @else
-        <script src=/js/logout.js></script>
-    @endguest
+    <script src=/js/index.js></script>
+    <script src=/js/textAnimation.js></script>
+    <script src=/js/form.js></script>
+    <script src=/js/signInUser.js></script>
+    <script src=/js/signUpUser.js></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpxglI-rL4d2J_PRe1uixVbWFRgvWsQCs"></script>
+    <script src=/js/map.js></script>
+    <script src=/js/tabs.js></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src=/js/portfolioChart.js></script>
+    <script src=/js/tokenChart.js></script>
+    <script src=/js/logout.js></script>
 </head>
