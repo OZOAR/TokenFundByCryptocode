@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\SignUpRequest;
+use App\Mail\UserSignUpRequested;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
@@ -30,6 +33,25 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Send request to sign up user.
+     *
+     * @param SignUpRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function signUpRequest(SignUpRequest $request)
+    {
+        $userEmailToSignUp = $request->input('email');
+
+        // TODO add check error
+        Mail::send(new UserSignUpRequested($userEmailToSignUp));
+
+        return response()->json([
+            'success' => true,
+            'message' => __('mail.sign_up.success')
+        ]);
     }
 
     /**

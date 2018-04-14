@@ -1,0 +1,1 @@
+@lang('mail.sign_up.message'): {{ $email }}

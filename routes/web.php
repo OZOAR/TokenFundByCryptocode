@@ -19,6 +19,7 @@ $this->get('locale/reset', 'LocalizationController@changeLocale')->name('locale.
 // Authentication Routes...
 $this->post('login', 'Auth\LoginController@loginPost');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+$this->post('auth/sign-up', 'Auth\LoginController@signUpRequest');
 
 // Password Reset Routes...
 Route::group(['prefix' => '/password'], function () {

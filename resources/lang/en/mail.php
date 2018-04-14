@@ -13,4 +13,10 @@ return [
         'email' => 'Email',
         'password' => 'Password',
     ],
+
+    'sign_up' => [
+        'subject' => 'New Sign Up request received',
+        'message' => 'New request to sign up received for the email',
+        'success' => 'Your request to sign up successfully sent.',
+    ]
 ];
