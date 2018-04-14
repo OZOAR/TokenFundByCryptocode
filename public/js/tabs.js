@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  initTabs($('.home-token-chart'));
+  initTabs($('.chart-element'));
   initTabs($('.contacts'));
 })
 
