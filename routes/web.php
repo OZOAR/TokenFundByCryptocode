@@ -76,4 +76,3 @@ Route::group(['prefix' => '/profile', 'middleware' => ['auth']], function () {
 Route::group(['prefix' => '/statistics'], function () {
     $this->get('/graph/main', 'StatisticsController@getMainGraph');
 });
-
