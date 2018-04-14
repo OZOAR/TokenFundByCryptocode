@@ -11,24 +11,11 @@
     },
     "devDependencies": {
         "axios": "^0.17",
-        "bootstrap": "^3.3.7",
-        "bootstrap-daterangepicker": "^2.1.30",
         "bootstrap-sass": "^3.3.7",
-        "chart.js": "^2.7.1",
         "cross-env": "^5.1",
-        "datejs": "^1.0.0-rc3",
-        "fastclick": "^1.0.6",
-        "flot": "^0.8.0-alpha",
-        "font-awesome": "^4.7.0",
         "jquery": "^3.2",
-        "jquery-sparkline": "^2.4.0",
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
-        "moment": "^2.20.1",
-        "parsleyjs": "^2.8.1",
         "vue": "^2.5.7"
-    },
-    "dependencies": {
-        "icheck": "^1.0.2"
     }
 }
