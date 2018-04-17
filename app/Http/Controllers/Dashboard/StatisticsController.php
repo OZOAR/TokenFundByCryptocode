@@ -39,13 +39,14 @@ class StatisticsController extends Controller
         $points = $this->filterMainGraphPoints($sheet->all());
 
         if ($points === null) {
-            return response()->json(['message' => __('dashboard.statistics.empty'),
-                'code' => 403
+            return response()->json([
+                'success' => false,
+                'message' => __('dashboard.statistics.empty'),
             ], 403);
         }
 
         if ($isPreview) {
-            return response()->json($points);
+            return response()->json(['success' => true, 'points' => $points]);
         }
 
         try {
@@ -58,12 +59,12 @@ class StatisticsController extends Controller
             DB::rollBack();
 
             return response()->json([
+                'success' => false,
                 'message' => __('dashboard.statistics.transaction_fail'),
-                'code' => 403
             ], 403);
         }
 
-        return response()->json($points);
+        return response()->json(['success' => true, 'points' => $points]);
     }
 
     /**
@@ -83,13 +84,14 @@ class StatisticsController extends Controller
         $points = $this->filterPortfolioGraphPoints($sheet->all());
 
         if ($points === null) {
-            return response()->json(['message' => __('dashboard.statistics.empty'),
-                'code' => 403
+            return response()->json([
+                'success' => false,
+                'message' => __('dashboard.statistics.empty'),
             ], 403);
         }
 
         if ($isPreview) {
-            return response()->json($points);
+            return response()->json(['success' => true, 'points' => $points]);
         }
 
         try {
@@ -105,12 +107,12 @@ class StatisticsController extends Controller
             DB::rollBack();
 
             return response()->json([
+                'success' => false,
                 'message' => __('dashboard.statistics.transaction_fail'),
-                'code' => 403
             ], 403);
         }
 
-        return response()->json($points);
+        return response()->json(['success' => true, 'points' => $points]);
     }
 
     protected function filterPortfolioGraphPoints($rows)

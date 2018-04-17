@@ -66,4 +66,16 @@ class PortfolioGraph extends Model
     {
         $this->quota = $quota;
     }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'asset' => $this->asset,
+            'ticket' => $this->ticket,
+            'balance' => $this->balance,
+            'usd' => $this->usd,
+            'y' => $this->quota,
+        ];
+    }
 }
