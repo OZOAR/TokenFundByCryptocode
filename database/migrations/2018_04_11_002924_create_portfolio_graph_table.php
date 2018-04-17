@@ -20,7 +20,6 @@ class CreatePortfolioGraphTable extends Migration
             $table->decimal('balance', 16, 8);
             $table->decimal('usd', 8, 3);
             $table->decimal('quota');
-            $table->date('date');
         });
     }
 

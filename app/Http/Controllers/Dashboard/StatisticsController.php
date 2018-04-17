@@ -14,6 +14,9 @@ class StatisticsController extends Controller
     const CACHE_TIME_EXCEL = 10; // in minutes
     const DATE_REGEX = '/^\\d{4}-\\d{2}-\\d{2}@12:00$/';
 
+    const INSERT_POINTS = 'insert';
+    const UPDATE_POINTS = 'update';
+
     public function showStatisticsPage()
     {
         return view('dashboard.statistics.index');
@@ -92,8 +95,10 @@ class StatisticsController extends Controller
         try {
             DB::beginTransaction();
 
-            // TODO insert OR update if exists
-            //PortfolioGraph::insert($points);
+            PortfolioGraph::insert($points[self::INSERT_POINTS]);
+
+//            update
+            //PortfolioGraph::up($points['update']);
 
             DB::commit();
         } catch (\Exception $e) {
@@ -108,8 +113,10 @@ class StatisticsController extends Controller
         return response()->json($points);
     }
 
-    protected function filterPortfolioGraphPoints($rows = null)
+    protected function filterPortfolioGraphPoints($rows)
     {
+        $points = [];
+
         if ($rows === null) {
             return null;
         }
@@ -118,24 +125,28 @@ class StatisticsController extends Controller
 
         if ($existsData->isNotEmpty()) {
             // TODO вынести непересекающие элементы в отдельный массив
-            // TODO сделать insert этих элементов
-            // TODO остальные проапдейтить
+            // TODO проапдейтить
 
-            foreach ($points as $key => $value) {
-                if (in_array($value->id, $unique)) {
-                    $doubles[] = $value;
-                    unset($array[$key]);
-                } else {
-                    $unique[] = $value->id;
-                }
+//            $existsData->contains();
+//            foreach ($points as $key => $value) {
+//                if (in_array($value->id, $unique)) {
+//                    $doubles[] = $value;
+//                    unset($array[$key]);
+//                } else {
+//                    $unique[] = $value->id;
+//                }
+//            }
+        } else {
+            foreach ($rows as $row) {
+                $portfolioGraph = $this->fillPortfolioGraphRow($row);
+                $points[self::INSERT_POINTS][] = $portfolioGraph->toArray();
             }
-
-
-            // TODO implement
         }
+
+        return $points;
     }
 
-    protected function filterMainGraphPoints($rows = null)
+    protected function filterMainGraphPoints($rows)
     {
         if ($rows === null) {
             return null;
@@ -145,16 +156,40 @@ class StatisticsController extends Controller
         $filteredRows = array_filter($rows, [$this, 'at_12_time']);
 
         foreach ($filteredRows as $row) {
-            $graphPoint = new MainGraph();
-
-            $graphPoint->setDate(substr($row->date, 0, 10));
-            $graphPoint->setUSD((float)substr($row->usd, 1, \strlen($row->usd)));
-            $graphPoint->setBTC((float)$row->btc);
-
+            $graphPoint = $this->fillMainGraphRow($row);
             $points[] = $graphPoint->toArray();
         }
 
         return $points;
+    }
+
+    private function fillMainGraphRow($row)
+    {
+        $graphPoint = new MainGraph();
+
+        $graphPoint->setDate(substr($row->date, 0, 10));
+        $graphPoint->setUSD((float)substr($row->usd, 1, \strlen($row->usd)));
+        $graphPoint->setBTC((float)$row->btc);
+
+        return $graphPoint;
+    }
+
+    private function fillPortfolioGraphRow($row)
+    {
+        $portfolioGraph = new PortfolioGraph();
+
+        $portfolioGraph->setAsset($row->asset);
+        $portfolioGraph->setTicket($row->ticket);
+
+        $balance = str_replace(',', '', $row->balance);
+        $portfolioGraph->setBalance((float)$balance);
+
+        $usd = str_replace([',', '$'], '', $row->usd);
+        $portfolioGraph->setUSD((float)$usd);
+
+        $portfolioGraph->setQuota((float)str_replace('%', '', $row->quota));
+
+        return $portfolioGraph;
     }
 
     private function at_12_time($row)

@@ -14,7 +14,7 @@ class PortfolioGraph extends Model
      * @var array
      */
     protected $fillable = [
-        'asset', 'ticket', 'balance', 'usd', 'quota', 'date'
+        'asset', 'ticket', 'balance', 'usd', 'quota'
     ];
 
     /**
@@ -65,15 +65,5 @@ class PortfolioGraph extends Model
     public function setQuota($quota)
     {
         $this->quota = $quota;
-    }
-
-    /**
-     * Set date of an asset.
-     *
-     * @param $date
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
     }
 }
