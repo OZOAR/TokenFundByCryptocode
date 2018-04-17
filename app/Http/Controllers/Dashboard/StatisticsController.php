@@ -98,9 +98,7 @@ class StatisticsController extends Controller
             DB::beginTransaction();
 
             PortfolioGraph::insert($points[self::INSERT_POINTS]);
-
-//            update
-            //PortfolioGraph::up($points['update']);
+            $this->updatePortfolioGraphPoints($points[self::UPDATE_POINTS]);
 
             DB::commit();
         } catch (\Exception $e) {
@@ -113,6 +111,13 @@ class StatisticsController extends Controller
         }
 
         return response()->json(['success' => true, 'points' => $points]);
+    }
+
+    protected function updatePortfolioGraphPoints($points)
+    {
+        foreach ($points as $point) {
+            $point->save();
+        }
     }
 
     protected function filterPortfolioGraphPoints($rows)
