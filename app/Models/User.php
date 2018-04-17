@@ -98,6 +98,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Get user's statistics.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function statistics()
+    {
+        return $this->hasMany(ProfileGraph::class);
+    }
+
+    /**
      * Get requests for a user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
