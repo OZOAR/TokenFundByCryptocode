@@ -39,12 +39,16 @@ class StatisticsController extends Controller
     public function getProfileStatistics()
     {
         $profilePoint = new ProfileGraph();
-        $profilePoint->setUSD(0.003);
+        $profilePoint->setUSD(0.2);
         $profilePoint->setDate(\Carbon\Carbon::now()->toDateTimeString());
+
+        $profilePoint_2 = new ProfileGraph();
+        $profilePoint_2->setUSD(0.5);
+        $profilePoint_2->setDate(\Carbon\Carbon::now()->toDateTimeString());
 
         $points = [
             $profilePoint,
-            $profilePoint
+            $profilePoint_2
         ];
 
         return response()->json($points);
