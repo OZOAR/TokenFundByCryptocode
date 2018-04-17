@@ -7,6 +7,7 @@ use App\Http\Requests\Dashboard\UpgradeGraphRequest;
 use App\Import\GraphImport;
 use App\Models\MainGraph;
 use App\Models\PortfolioGraph;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class StatisticsController extends Controller
@@ -45,9 +46,10 @@ class StatisticsController extends Controller
             ], 403);
         }
 
-        if ($isPreview) {
-            return response()->json(['success' => true, 'points' => $points]);
-        }
+        // TODO fix
+        //       if ($isPreview) {
+        //           return response()->json(['success' => true, 'points' => $points]);
+        //       }
 
         try {
             DB::beginTransaction();
@@ -64,7 +66,9 @@ class StatisticsController extends Controller
             ], 403);
         }
 
-        return response()->json(['success' => true, 'points' => $points]);
+        // TODO send message
+        return redirect()->back();
+        // return response()->json(['success' => true, 'points' => $points]);
     }
 
     /**
@@ -90,15 +94,21 @@ class StatisticsController extends Controller
             ], 403);
         }
 
-        if ($isPreview) {
-            return response()->json(['success' => true, 'points' => $points]);
-        }
+        // TODO fix
+//        if ($isPreview) {
+//            return response()->json(['success' => true, 'points' => $this->transformed($points[])]);
+//        }
 
         try {
             DB::beginTransaction();
 
-            PortfolioGraph::insert($points[self::INSERT_POINTS]);
-            $this->updatePortfolioGraphPoints($points[self::UPDATE_POINTS]);
+            if(Arr::exists($points, self::INSERT_POINTS)) {
+                PortfolioGraph::insert($points[self::INSERT_POINTS]);
+            }
+
+            if(Arr::exists($points, self::UPDATE_POINTS)) {
+                $this->updatePortfolioGraphPoints($points[self::UPDATE_POINTS]);
+            }
 
             DB::commit();
         } catch (\Exception $e) {
@@ -110,7 +120,9 @@ class StatisticsController extends Controller
             ], 403);
         }
 
-        return response()->json(['success' => true, 'points' => $points]);
+        // TODO send message
+        return redirect()->back();
+        // return response()->json(['success' => true, 'points' => $this->transformed($points)]);
     }
 
     protected function updatePortfolioGraphPoints($points)
@@ -122,35 +134,45 @@ class StatisticsController extends Controller
 
     protected function filterPortfolioGraphPoints($rows)
     {
-        $points = [];
+        $newPortfolioPoints = [];
 
         if ($rows === null) {
             return null;
         }
 
-        $existsData = PortfolioGraph::all();
+        $collectedRows = collect($rows);
+        $portfolioPoints = PortfolioGraph::all();
 
-        if ($existsData->isNotEmpty()) {
-            // TODO вынести непересекающие элементы в отдельный массив
-            // TODO проапдейтить
+        if ($portfolioPoints->isNotEmpty()) {
+            $updatePoints = $portfolioPoints->reject(function ($point) use ($collectedRows) {
+                return $collectedRows->firstWhere('ticket', '==', $point->getTicket()) === null;
+            });
 
-//            $existsData->contains();
-//            foreach ($points as $key => $value) {
-//                if (in_array($value->id, $unique)) {
-//                    $doubles[] = $value;
-//                    unset($array[$key]);
-//                } else {
-//                    $unique[] = $value->id;
-//                }
-//            }
+            foreach ($updatePoints as $item) {
+                $data = $collectedRows->firstWhere('ticket', '==', $item->getTicket());
+                $this->fillPortfolioGraphRow($data, $item);
+            }
+
+            foreach ($updatePoints as $point) {
+                $newPortfolioPoints[self::UPDATE_POINTS][] = $point;
+            }
+
+            $createPoints = $collectedRows->reject(function ($point) use ($portfolioPoints) {
+                return $portfolioPoints->firstWhere('ticket', '==', $point->ticket);
+            });
+
+            foreach ($createPoints as $row) {
+                $portfolioGraph = $this->fillPortfolioGraphRow($row);
+                $newPortfolioPoints[self::INSERT_POINTS][] = $portfolioGraph->toArray();
+            }
         } else {
             foreach ($rows as $row) {
                 $portfolioGraph = $this->fillPortfolioGraphRow($row);
-                $points[self::INSERT_POINTS][] = $portfolioGraph->toArray();
+                $newPortfolioPoints[self::INSERT_POINTS][] = $portfolioGraph->toArray();
             }
         }
 
-        return $points;
+        return $newPortfolioPoints;
     }
 
     protected function filterMainGraphPoints($rows)
@@ -181,9 +203,9 @@ class StatisticsController extends Controller
         return $graphPoint;
     }
 
-    private function fillPortfolioGraphRow($row)
+    private function fillPortfolioGraphRow($row, $item = null)
     {
-        $portfolioGraph = new PortfolioGraph();
+        $portfolioGraph = $item === null ? new PortfolioGraph() : $item;
 
         $portfolioGraph->setAsset($row->asset);
         $portfolioGraph->setTicket($row->ticket);

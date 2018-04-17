@@ -17,6 +17,18 @@ class PortfolioGraph extends Model
         'asset', 'ticket', 'balance', 'usd', 'quota'
     ];
 
+    public $timestamps = false;
+
+    /**
+     * Get asset.
+     *
+     * @return string
+     */
+    public function getAsset(): string
+    {
+        return $this->asset;
+    }
+
     /**
      * Set asset of an asset.
      *
@@ -27,6 +39,15 @@ class PortfolioGraph extends Model
         $this->asset = $asset;
     }
 
+    /**
+     * Get ticket name.
+     *
+     * @return string
+     */
+    public function getTicket(): string
+    {
+        return $this->ticket;
+    }
     /**
      * Set ticket of an asset.
      *
@@ -65,17 +86,5 @@ class PortfolioGraph extends Model
     public function setQuota($quota)
     {
         $this->quota = $quota;
-    }
-
-    public function toArray()
-    {
-        return [
-            'id' => $this->id,
-            'asset' => $this->asset,
-            'ticket' => $this->ticket,
-            'balance' => $this->balance,
-            'usd' => $this->usd,
-            'y' => $this->quota,
-        ];
     }
 }

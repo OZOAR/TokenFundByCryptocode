@@ -33,7 +33,7 @@ class StatisticsController extends Controller
     {
         $points = PortfolioGraph::all();
 
-        return response()->json($points);
+        return response()->json($this->transformed($points));
     }
 
     public function getProfileStatistics()
@@ -52,5 +52,19 @@ class StatisticsController extends Controller
         ];
 
         return response()->json($points);
+    }
+
+    private function transformed($items)
+    {
+        return $items->transform(function ($item) {
+            return [
+                'id' => $item->id,
+                'asset' => $item->asset,
+                'ticket' => $item->ticket,
+                'balance' => $item->balance,
+                'usd' => $item->usd,
+                'y' => $item->quota,
+            ];
+        });
     }
 }

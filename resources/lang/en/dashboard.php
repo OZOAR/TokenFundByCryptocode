@@ -43,6 +43,7 @@ return [
         'preview' => 'Preview',
         'empty' => 'Haven\'t any items.',
         'transaction_fail' => 'Can\'t update graph data. Maybe you have duplicates.',
+        'transaction_success' => 'Graph data successfully updated.',
     ],
 
     'users' => [
