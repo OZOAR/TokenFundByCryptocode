@@ -28,10 +28,10 @@ return [
         'no' => 'no'
     ],
     'banner' => [
-        'title' => 'Dream Big. Do Different',
-        'subtitle' => 'Welcome on our board!',
-        'summary' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam et impedit repudiandae deserunt, consequuntur ducimus aliquam.',
-        'button' => 'Join'
+        'title' => 'VID Invest Fund',
+        'subtitle' => 'Invest In digital future',
+        'summary' => 'VID Invest Fund offers an opportunity for people to join the growth of a new technological market',
+        'button' => 'Join now'
     ],
     'chart' => [
         'current_stat' => 'Current statistics',

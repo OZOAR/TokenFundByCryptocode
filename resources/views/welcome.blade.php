@@ -6,9 +6,9 @@
     <div class="main-banner-absolute">
       <div class="banner-summary">
         <div class="wrapper">
-          <h1 id="title">VID Invest Fund</h1>
-          <p id="sub-title">Инвестируй в цифровое будущее</p>
-          <p>VID Invest Fund предлагает возможность для людей успеть присоединиться к росту нового технологического рынка</p>
+          <h1 id="title">@lang('index.banner.title')</h1>
+          <p id="sub-title">@lang('index.banner.subtitle')</p>
+          <p>@lang('index.banner.summary')</p>
           <a href="#" class="button loginCta">@lang('index.banner.button')</a>
         </div>
       </div>
@@ -28,10 +28,10 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane" id="tabUSD">
-            <div id="tokenChartUSD" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+            <div id="tokenChartUSD" style="max-width: 450px; height: 300px;"></div>
           </div>
           <div class="tab-pane hidden" id="tabBTC">
-            <div id="tokenChartBTC" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+            <div id="tokenChartBTC" style="max-width: 450px; height: 300px;"></div>
           </div>
         </div>
       </div>
@@ -47,7 +47,6 @@
       <div class="how-summary">
         <h2>@lang('index.about.how')</h2>
         <p>@lang('index.about.summary')</p>
-        <a href="#" class="link">White Paper</a>
         <a href="#" class="button join-button">@lang('index.about.button')</a>
       </div>
       <div class="how-img">

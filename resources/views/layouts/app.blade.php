@@ -8,18 +8,13 @@
             <a href="/"><img src="images/logo-white.png" alt=""></a>
         </div>
         <div class="navigation">
-            <nav>
+            <nav style="padding: 20px">
                 <div class="language-switcher">
                     <form action="{{ route('locale.reset') }}">
                         <input type="hidden" name="lang" value="{{ (app()->getLocale() === 'en') ? 'ru' : 'en' }}">
                         <input type="submit" value="{{ app()->getLocale() }}">
                     </form>
                 </div>
-                @guest
-                    <a href="#" class="loginCta">@lang('index.auth.login')<i class="fas fa-user"></i></a>
-                @else
-                    <a href="#" class="logoutCta">@lang('index.auth.logout')<i class="fas fa-user"></i></a>
-                @endguest
             </nav>
         </div>
     </div>

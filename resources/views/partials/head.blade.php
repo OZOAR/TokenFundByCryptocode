@@ -26,5 +26,4 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src=/js/portfolioChart.js></script>
     <script src=/js/tokenChart.js></script>
-    <script src=/js/logout.js></script>
 </head>

@@ -200,7 +200,6 @@ main.margin-main{
   font-weight: 300;
   text-align: center;
   color: #2c6274;
-  text-transform: capitalize;
   margin-bottom: 35px;
 }
 .home-token-chart .wrapper,
@@ -248,7 +247,7 @@ main.margin-main{
 }
 .home-token-chart .chart-element,
 .portfolio-chart .chart-element {
-  flex-basis: 60%;
+  flex-basis: 40%;
 }
 .home-token-chart .chart-summary,
 .portfolio-chart .chart-summary {
@@ -264,7 +263,6 @@ main.margin-main{
 .chart-summary p {
   color: #898989;
   font-size: 2.4rem;
-  margin-left: 50px;
 }
 .chart-summary p span {
   color: #2c6274;
