@@ -56,14 +56,17 @@
   .number-items {
     flex-wrap: wrap;
   }
-  .number-items .item {
-    flex-basis: 49.9%;
+  .number-items .item,
+  .number-items.row-new .item{
+    flex-basis: 50%;
   }
+
+  .number-items.row-new  .item:last-child {
+    flex-basis: 100%;
+  }
+
   .number-items .item:not(:last-child) {
     margin-right: 0px;
-  }
-  .number-items .item:nth-child(n+3) {
-    margin-top: 0.5px;
   }
   .social-links {
     width: 100%;

@@ -44,11 +44,35 @@ return [
         'summary' => 'With the unprecedented rise of cryptocurrencies and blockchain technology, new opportunities are arising in field of investment.',
         'button' => 'Join now'
     ],
-    'digits' => [
-        '1' => 'Lines Coded',
-        '2' => 'Completed Projects',
-        '3' => 'Working Hours',
-        '4' => 'No. of Clients'
+    'team' => [
+        '1' => [
+            'name' => 'Vidmanov Alexander',
+            'job' => 'CEO',
+        ],
+        '2' => [
+            'name' => 'Zhubayev Maksut',
+            'job' => 'Managing partner',
+        ],
+        '3' => [
+            'name' => 'Aubakirov Timur',
+            'job' => 'Portfolio Manager',
+        ],
+        '4' => [
+            'name' => 'Mendygaliyev Anuar',
+            'job' => 'Trader',
+        ],
+        '5' => [
+            'name' => 'Vidmanov Vasiliy',
+            'job' => 'Trader-analyst',
+        ],
+        '6' => [
+            'name' => 'Vidmanova Daria',
+            'job' => 'Marketing Director',
+        ],
+        '7' => [
+            'name' => 'Mukhamedzyanov Vladislav',
+            'job' => 'Legal advisor',
+        ],
     ],
     'contacts' => [
         'title' => 'Contact Us',

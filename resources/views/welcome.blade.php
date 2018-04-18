@@ -56,20 +56,41 @@
   </div>
   <div class="number-items">
     <div class="item">
-      <span>7854 k+</span>
-      <p>@lang('index.digits.1')</p>
+      <span><img src="/images/user-white.png" alt="" width="100" /></span>
+      <p>@lang('index.team.1.name')</p>
+      <p class="user-job"><i>@lang('index.team.1.job')</i></p>
     </div>
     <div class="item">
-      <span>548</span>
-      <p>@lang('index.digits.2')</p>
+      <span><img src="/images/user-white.png" alt="" width="100" /></span>
+      <p>@lang('index.team.2.name')</p>
+      <p class="user-job"><i>@lang('index.team.2.job')</i></p>
     </div>
     <div class="item">
-      <span>80 k+</span>
-      <p>@lang('index.digits.3')</p>
+      <span><img src="/images/user-white.png" alt="" width="100" /></span>
+      <p>@lang('index.team.3.name')</p>
+      <p class="user-job"><i>@lang('index.team.3.job')</i></p>
     </div>
     <div class="item">
-      <span>89</span>
-      <p>@lang('index.digits.4')</p>
+      <span><img src="/images/user-white.png" alt="" width="100" /></span>
+      <p>@lang('index.team.4.name')</p>
+      <p class="user-job"><i>@lang('index.team.4.job')</i></p>
+    </div>
+  </div>
+  <div class="number-items row-new">
+    <div class="item">
+      <span><img src="/images/user-white.png" alt="" width="100" /></span>
+      <p>@lang('index.team.5.name')</p>
+      <p class="user-job"><i>@lang('index.team.5.job')</i></p>
+    </div>
+    <div class="item">
+      <span><img src="/images/user-white.png" alt="" width="100" /></span>
+      <p>@lang('index.team.6.name')</p>
+      <p class="user-job"><i>@lang('index.team.6.job')</i></p>
+    </div>
+    <div class="item">
+      <span><img src="/images/user-white.png" alt="" width="100" /></span>
+      <p>@lang('index.team.7.name')</p>
+      <p class="user-job"><i>@lang('index.team.7.job')</i></p>
     </div>
   </div>
   <div class="portfolio-chart">
