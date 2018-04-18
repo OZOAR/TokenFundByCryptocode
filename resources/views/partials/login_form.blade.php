@@ -1,5 +1,5 @@
 <div class="login-form popup hidden">
-    <a href="#" id="closeLoginForm"><i class="far fa-times-circle"></i></a>
+    <a href="javascript;;" id="closeLoginForm"><i class="far fa-times-circle"></i></a>
     <div class="login-form-wrapper sign-in">
         <h2>@lang('index.auth.form.sign_in.sign_in')</h2>
         <div class="error-message hidden"><p>@lang('index.auth.form.sign_in.error_message')</p></div>

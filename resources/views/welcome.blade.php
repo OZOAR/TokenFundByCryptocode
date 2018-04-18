@@ -9,7 +9,7 @@
           <h1 id="title">@lang('index.banner.title')</h1>
           <p id="sub-title">@lang('index.banner.subtitle')</p>
           <p>@lang('index.banner.summary')</p>
-          <a href="#" class="button loginCta">@lang('index.banner.button')</a>
+          <a href="javascript;;" class="button loginCta">@lang('index.banner.button')</a>
         </div>
       </div>
     </div>
@@ -102,7 +102,7 @@
         <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>
         <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>Ƀ748</span></p>
         <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'): <span>693.86%</span></p>
-        <a href="#" class="button join-button">@lang('index.chart.invest')</a>
+        <a href="javascript;;" class="button join-button">@lang('index.chart.invest')</a>
       </div>
     </div>
   </div>

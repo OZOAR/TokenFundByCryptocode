@@ -33,10 +33,6 @@
     </div>
 </footer>
 <div id="popupBg" class="hidden"></div>
-@guest
-    @include('partials.login_form')
-@else
-    @include('partials.logout_form')
-@endguest
+@include('partials.login_form')
 </body>
 </html>

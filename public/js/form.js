@@ -23,7 +23,11 @@ $(document).ready(function(){
   });
 
   $popupBg.on('click', hideLoginPopup);
-  $closeIcon.on('click', hideLoginPopup);
+  $closeIcon.on('click',  function(e) {
+      e.preventDefault();
+      $loginForm.addClass('hidden');
+      $popupBg.addClass('hidden');
+  });
 
   $('#switchToSignUp').on('click', function(e) {
     e.preventDefault();
@@ -58,7 +62,7 @@ $(document).ready(function(){
 
   joinButtons.each(function() {
     $(this).on('click', function(e) {
-      e.preventDefault;
+      e.preventDefault();
       $sigInForm.addClass('hidden');
       $sigUpForm.removeClass('hidden');
       showLoginPopup();
