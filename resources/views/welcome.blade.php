@@ -6,17 +6,16 @@
     <div class="main-banner-absolute">
       <div class="banner-summary">
         <div class="wrapper">
-          <h1 id="title">@lang('index.banner.title')</span>
-          </h1>
-          <p>@lang('index.banner.subtitle')</p>
-          <p>@lang('index.banner.summary')</p>
+          <h1 id="title">VID Invest Fund</h1>
+          <p id="sub-title">Инвестируй в цифровое будущее</p>
+          <p>VID Invest Fund предлагает возможность для людей успеть присоединиться к росту нового технологического рынка</p>
           <a href="#" class="button loginCta">@lang('index.banner.button')</a>
         </div>
       </div>
     </div>
   </div>
   <div class="home-token-chart">
-    <h2>Live update</h2>
+    <h2>@lang('index.chart.current_stat')</h2>
     <div class="wrapper">
       <div class="chart-element">
         <ul class="nav-tabs">
@@ -46,8 +45,8 @@
   <div class="how-it-works">
     <div class="wrapper">
       <div class="how-summary">
-        <h2>How it works?</h2>
-        <p>@lang('index.about.summary1')</p>
+        <h2>@lang('index.about.how')</h2>
+        <p>@lang('index.about.summary')</p>
         <a href="#" class="link">White Paper</a>
         <a href="#" class="button join-button">@lang('index.about.button')</a>
       </div>

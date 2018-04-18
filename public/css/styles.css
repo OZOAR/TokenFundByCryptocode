@@ -152,8 +152,15 @@ main.margin-main{
   font-weight: 300;
   text-align: center;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
+
+.banner-summary #sub-title {
+  font-family: 'WalkwayBold', Ubuntu;
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+}
+
 .banner-summary p {
   width: 50%;
   font-size: 1.6rem;
