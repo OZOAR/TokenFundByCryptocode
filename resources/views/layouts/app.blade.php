@@ -8,13 +8,16 @@
             <a href="/"><img src="images/logo-white.png" alt=""></a>
         </div>
         <div class="navigation">
-            <nav style="padding: 20px">
+            <nav>
                 <div class="language-switcher">
                     <form action="{{ route('locale.reset') }}">
                         <input type="hidden" name="lang" value="{{ (app()->getLocale() === 'en') ? 'ru' : 'en' }}">
                         <input type="submit" value="{{ app()->getLocale() }}">
                     </form>
                 </div>
+                <a href="/">FAQ</a>
+                <a href="/">Whitepaper</a>
+                <a href="javascript;;" class="loginCta">@lang('index.auth.login')</a>
             </nav>
         </div>
     </div>

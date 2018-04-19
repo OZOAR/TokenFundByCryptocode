@@ -849,3 +849,7 @@ footer p {
 .phones {
     margin-bottom: 30px;
 }
+
+header .navigation nav {
+    padding: 10px;
+}
