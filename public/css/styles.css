@@ -99,7 +99,8 @@ header .navigation a {
     transition: line-height 0.7s;
 }
 
-header .navigation nav > a {
+header .navigation nav > a,
+.language-switcher {
     margin-left: 20px;
 }
 
