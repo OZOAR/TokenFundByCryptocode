@@ -27,6 +27,9 @@ return [
         'yes' => 'Да',
         'no' => 'Нет'
     ],
+
+    'partners' => 'Партнеры',
+
     'banner' => [
         'title' => 'VID Invest Fund',
         'subtitle' => 'Инвестируй в цифровое будущее',

@@ -854,3 +854,18 @@ footer p {
 header .navigation nav {
     padding: 10px;
 }
+
+#partners {
+    display: block;
+    text-align: center;
+    padding: 40px 0;
+}
+
+#partners .partners-item {
+    display: inline-block;
+    width: 12%;
+}
+
+#partners .partners-item img {
+    vertical-align: middle;
+}

@@ -5,6 +5,19 @@
     }
 }
 
+@media screen and (max-width: 1170px) {
+    #partners .partners-item {
+        width: 15%;
+        margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    #partners .partners-item {
+        width: 20%;
+    }
+}
+
 @media screen and (max-width: 750px) {
     .home-token-chart .wrapper,
     .portfolio-chart .wrapper {
@@ -93,6 +106,17 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    #partners {
+        padding: 20px 0;
+    }
+
+    #partners .partners-item {
+        width: 30.3333%;
+        margin: 10px 0;
+    }
+}
+
 @media screen and (max-width: 460px) {
     .banner-summary h1 {
         font-size: 4.4rem;
@@ -113,5 +137,9 @@
 
     header .navigation nav > a:first-child {
         margin-left: 0;
+    }
+
+    #partners .partners-item {
+        width: 49%;
     }
 }
