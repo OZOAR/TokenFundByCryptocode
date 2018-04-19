@@ -11,7 +11,7 @@ var $header = $('#headerHome'),
         'opacity': '0.8'
       });
       $logo.css('width', '70px');
-      $navLinks.css('line-height', '70px');
+      $navLinks.css('line-height', '50px');
     }
     else {
       $header.css({
@@ -19,7 +19,7 @@ var $header = $('#headerHome'),
         'opacity': '1'
       });
       $logo.css('width', '90px');
-      $navLinks.css('line-height', '90px');
+      $navLinks.css('line-height', '70px');
     }
   });
 });
