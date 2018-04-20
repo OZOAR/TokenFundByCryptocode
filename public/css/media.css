@@ -64,6 +64,18 @@
     .social-links {
         width: 80%;
     }
+
+    .variants-list .variant-token {
+        width: 100%;
+    }
+
+    .variants-list .variant-token .button {
+        margin: 1em 0;
+    }
+
+    .variants-list .variant-token:last-child .button {
+        margin-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 650px) {

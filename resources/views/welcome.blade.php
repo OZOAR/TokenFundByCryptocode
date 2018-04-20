@@ -15,6 +15,28 @@
             </div>
         </div>
 
+        <div class="variants-of-token">
+            <div class="wrapper">
+                <h2>@lang('index.variants.title')</h2>
+                <div class="variants-list">
+                    <div class="variant-token">
+                        <p>@lang('index.variants.variant_cons')</p>
+                    </div>
+                    <div class="variant-token">
+                        <p>@lang('index.variants.variant_aggress')</p>
+                    </div>
+                </div>
+                <div class="variants-list">
+                    <div class="variant-token">
+                        <a href="#" class="button">@lang('index.variants.cons_button')</a>
+                    </div>
+                    <div class="variant-token">
+                        <a href="#" class="button">@lang('index.variants.aggress_button')</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="how-it-works">
             <div class="wrapper">
                 <div class="how-summary">

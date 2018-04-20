@@ -28,6 +28,14 @@ return [
         'no' => 'no'
     ],
 
+    'variants' => [
+        'title' => 'Portfolios of VID Invest',
+        'cons_button' => 'Conservative portfolio',
+        'aggress_button' => 'Aggressive portfolio',
+        'variant_cons' => 'The "Conservative" portfolio with the passive management, which assigns the leading role in assets allocating to the largest cryptocurrencies capitalization, including Bitcoin. According to investment portfolio strategy with a conservative strategy rebalancing is going to be done at least once a month and it does not imply active trading and oriented towards to long-term investors.',
+        'variant_aggress' => 'The "Aggressive" portfolio with the active management mainly based on high-yield and high-risk altcoins, which required to rebalance at least once a week. At the discretion of VID Invest Fund managers, rebalancing could be done every day. This strategy includes daytrading, swing trading, and also leaves the opportunity to profit from new investments, for example, the ICO. Moreover, the aggressive portfolio strategy implied active trading and it oriented to Investors with an elevated level to risks.',
+    ],
+
     'partners' => 'Partners',
 
     'banner' => [
