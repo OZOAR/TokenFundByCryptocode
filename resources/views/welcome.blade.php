@@ -14,6 +14,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="how-it-works">
+            <div class="wrapper">
+                <div class="how-summary">
+                    <h2>@lang('index.about.how')</h2>
+                    <p>@lang('index.about.summary')</p>
+                    <a href="#" class="button join-button">@lang('index.about.button')</a>
+                </div>
+                <div class="how-img">
+                    <img src="images/blockchain3.png" alt="">
+                </div>
+            </div>
+        </div>
+
         <div class="home-token-chart">
             <h2>@lang('index.chart.current_stat')</h2>
             <div class="wrapper">
@@ -42,18 +56,7 @@
                 </div>
             </div>
         </div>
-        <div class="how-it-works">
-            <div class="wrapper">
-                <div class="how-summary">
-                    <h2>@lang('index.about.how')</h2>
-                    <p>@lang('index.about.summary')</p>
-                    <a href="#" class="button join-button">@lang('index.about.button')</a>
-                </div>
-                <div class="how-img">
-                    <img src="images/blockchain3.png" alt="">
-                </div>
-            </div>
-        </div>
+
         <div class="number-items">
             <div class="item">
                 <span><img src="/images/user-white.png" alt="" width="100"/></span>
@@ -94,6 +97,23 @@
             </div>
         </div>
 
+        <div class="portfolio-chart">
+            <div class="wrapper">
+                <div class="chart-element">
+                    <div id="portfolioChart"
+                         style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                </div>
+                <div class="chart-summary">
+                    <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>
+                    <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>Ƀ748</span></p>
+                    <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'): <span>693.86%</span></p>
+                    <a href="javascript;;" class="button join-button">@lang('index.chart.invest')</a>
+                </div>
+            </div>
+        </div>
+
+        @include('partials.contacts')
+
         <div id="partners">
             <div class="partners-item item">
                 <span><a href="https://www.cryptech.cloud/"><img src="/images/partners/cryptech.png" alt=""
@@ -127,21 +147,5 @@
                                                            width="100"/></a></span>
             </div>
         </div>
-
-        <div class="portfolio-chart">
-            <div class="wrapper">
-                <div class="chart-element">
-                    <div id="portfolioChart"
-                         style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-                </div>
-                <div class="chart-summary">
-                    <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>$469</span></p>
-                    <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price'): <span>Ƀ748</span></p>
-                    <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'): <span>693.86%</span></p>
-                    <a href="javascript;;" class="button join-button">@lang('index.chart.invest')</a>
-                </div>
-            </div>
-        </div>
-        @include('partials.contacts')
     </main>
 @endsection
