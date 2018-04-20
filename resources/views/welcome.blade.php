@@ -59,18 +59,21 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane" id="tab-cons">
-                            <div id="tokenChartUSD" style="max-width: 500px; height: 300px;"></div>
+                            <div id="tokenChartUSD" style="max-width: 350px; height: 250px;"></div>
+                            <div id="portfolioChartCons"
+                                 style="max-width: 420px; height: 300px;"></div>
                             <div class="chart-summary">
                                 <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') USD:
-                                    <span>$469</span></p>
+                                    <span>$394</span></p>
                                 <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') BTC:
-                                    <span>Ƀ748</span></p>
+                                    <span>Ƀ561</span></p>
                                 <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'):
-                                    <span>693.86%</span></p>
+                                    <span>803.12%</span></p>
                             </div>
                         </div>
                         <div class="tab-pane hidden" id="tab-aggress">
-                            <div id="tokenChartBTC" style="max-width: 500px; height: 300px;"></div>
+                            <div id="tokenChartBTC" style="max-width: 350px; height: 250px;"></div>
+                            <div id="portfolioChartAggress" style="max-width: 420px; height: 300px;"></div>
                             <div class="chart-summary">
                                 <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') USD:
                                     <span>$469</span></p>

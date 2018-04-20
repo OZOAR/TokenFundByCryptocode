@@ -860,11 +860,16 @@ footer p {
 }
 
 .chart-element .tab-pane div:first-child {
-    flex-basis: 49%;
+    flex-basis: 33%;
+}
+
+.chart-element .tab-pane div:nth-child(2) {
+    flex-basis: 33%;
 }
 
 .chart-element .tab-pane .chart-summary {
-    flex-basis: 50%;
+    flex-basis: 33%;
+    padding-top: 4em;
 }
 
 .contacts-info {

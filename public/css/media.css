@@ -10,6 +10,20 @@
         width: 15%;
         margin: 15px 0;
     }
+
+    .chart-element .tab-pane {
+        display: block;
+        text-align: center;
+    }
+
+    .chart-element .tab-pane div {
+        width: 100%;
+        display: inline-table;
+    }
+
+    .chart-element .nav-tabs {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 860px) {
@@ -150,5 +164,9 @@
 
     #partners .partners-item {
         width: 49%;
+    }
+
+    .chart-element .tab-pane .chart-summary {
+        padding-top: 0;
     }
 }
