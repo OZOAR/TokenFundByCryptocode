@@ -76,6 +76,14 @@
     .variants-list .variant-token:last-child .button {
         margin-bottom: 0;
     }
+
+    .variants-list .variant-token .button.variants-mobile-button {
+        display: inline-table;
+    }
+
+    .variants-buttons {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 650px) {

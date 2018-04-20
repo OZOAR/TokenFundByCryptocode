@@ -21,12 +21,14 @@
                 <div class="variants-list">
                     <div class="variant-token">
                         <p>@lang('index.variants.variant_cons')</p>
+                        <a href="#" class="button variants-mobile-button">@lang('index.variants.cons_button')</a>
                     </div>
                     <div class="variant-token">
                         <p>@lang('index.variants.variant_aggress')</p>
+                        <a href="#" class="button variants-mobile-button">@lang('index.variants.aggress_button')</a>
                     </div>
                 </div>
-                <div class="variants-list">
+                <div class="variants-list variants-buttons">
                     <div class="variant-token">
                         <a href="#" class="button">@lang('index.variants.cons_button')</a>
                     </div>

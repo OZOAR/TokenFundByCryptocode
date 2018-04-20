@@ -238,6 +238,10 @@ variants-of-token .wrapper {
     align-items: center;
 }
 
+.variants-list .variant-token .button.variants-mobile-button {
+    display: none;
+}
+
 .chart-element .nav-tabs {
     margin-bottom: 20px;
 }
