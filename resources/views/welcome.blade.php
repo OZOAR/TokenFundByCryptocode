@@ -21,20 +21,13 @@
                 <div class="variants-list">
                     <div class="variant-token">
                         <p>@lang('index.variants.variant_cons')</p>
-                        <a href="#" class="button variants-mobile-button">@lang('index.variants.cons_button')</a>
                     </div>
                     <div class="variant-token">
                         <p>@lang('index.variants.variant_aggress')</p>
-                        <a href="#" class="button variants-mobile-button">@lang('index.variants.aggress_button')</a>
                     </div>
                 </div>
                 <div class="variants-list variants-buttons">
-                    <div class="variant-token">
-                        <a href="#" class="button">@lang('index.variants.cons_button')</a>
-                    </div>
-                    <div class="variant-token">
-                        <a href="#" class="button">@lang('index.variants.aggress_button')</a>
-                    </div>
+                    <a href="#portfolios-block" class="button">@lang('index.chart.current_stat')</a>
                 </div>
             </div>
         </div>
@@ -52,31 +45,42 @@
             </div>
         </div>
 
-        <div class="home-token-chart">
+        <div class="home-token-chart" id="portfolios-block">
             <h2>@lang('index.chart.current_stat')</h2>
             <div class="wrapper">
                 <div class="chart-element">
                     <ul class="nav-tabs">
                         <li class="tab active">
-                            <a href="#tabUSD">@lang('index.chart.token_price') USD</a>
+                            <a href="#tab-cons">@lang('index.variants.cons_button')</a>
                         </li>
                         <li class="tab">
-                            <a href="#tabBTC">@lang('index.chart.token_price') BTC</a>
+                            <a href="#tab-aggress">@lang('index.variants.aggress_button')</a>
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane" id="tabUSD">
-                            <div id="tokenChartUSD" style="max-width: 450px; height: 300px;"></div>
+                        <div class="tab-pane" id="tab-cons">
+                            <div id="tokenChartUSD" style="max-width: 500px; height: 300px;"></div>
+                            <div class="chart-summary">
+                                <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') USD:
+                                    <span>$469</span></p>
+                                <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') BTC:
+                                    <span>Ƀ748</span></p>
+                                <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'):
+                                    <span>693.86%</span></p>
+                            </div>
                         </div>
-                        <div class="tab-pane hidden" id="tabBTC">
-                            <div id="tokenChartBTC" style="max-width: 450px; height: 300px;"></div>
+                        <div class="tab-pane hidden" id="tab-aggress">
+                            <div id="tokenChartBTC" style="max-width: 500px; height: 300px;"></div>
+                            <div class="chart-summary">
+                                <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') USD:
+                                    <span>$469</span></p>
+                                <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') BTC:
+                                    <span>Ƀ748</span></p>
+                                <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'):
+                                    <span>693.86%</span></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="chart-summary">
-                    <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') USD: <span>$469</span></p>
-                    <p><i class="fas fa-chart-bar"></i>@lang('index.chart.token_price') BTC: <span>Ƀ748</span></p>
-                    <p><i class="fas fa-chart-line"></i>@lang('index.chart.funds_yields'): <span>693.86%</span></p>
                 </div>
             </div>
         </div>

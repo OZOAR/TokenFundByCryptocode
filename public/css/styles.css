@@ -238,12 +238,13 @@ variants-of-token .wrapper {
     align-items: center;
 }
 
-.variants-list .variant-token .button.variants-mobile-button {
-    display: none;
+.variants-list .button {
+    display: inline-table;
 }
 
 .chart-element .nav-tabs {
     margin-bottom: 20px;
+    width: 40%;
 }
 
 .chart-element .tab {
@@ -286,7 +287,7 @@ variants-of-token .wrapper {
 
 .home-token-chart .chart-element,
 .portfolio-chart .chart-element {
-    flex-basis: 40%;
+    flex-basis: 100%;
 }
 
 .home-token-chart .chart-summary,
@@ -367,7 +368,7 @@ variants-of-token .wrapper {
     text-align: justify;
 }
 
-.variants-list .variant-token .button {
+.variants-buttons .button {
     background-color: #2c6274;
     color: #fff;
     display: inline-block;
@@ -850,6 +851,20 @@ footer p {
 
 .contacts .tab-pane .wrapper {
     position: relative;
+}
+
+.chart-element .tab-pane {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chart-element .tab-pane div:first-child {
+    flex-basis: 49%;
+}
+
+.chart-element .tab-pane .chart-summary {
+    flex-basis: 50%;
 }
 
 .contacts-info {

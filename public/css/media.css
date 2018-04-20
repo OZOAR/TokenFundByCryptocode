@@ -67,22 +67,11 @@
 
     .variants-list .variant-token {
         width: 100%;
+        padding-bottom: 10px;
     }
 
-    .variants-list .variant-token .button {
+    .variants-list .button {
         margin: 1em 0;
-    }
-
-    .variants-list .variant-token:last-child .button {
-        margin-bottom: 0;
-    }
-
-    .variants-list .variant-token .button.variants-mobile-button {
-        display: inline-table;
-    }
-
-    .variants-buttons {
-        display: none;
     }
 }
 

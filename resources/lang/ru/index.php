@@ -45,7 +45,7 @@ return [
         'button' => 'Присоединиться'
     ],
     'chart' => [
-        'current_stat' => 'Текущие показатели',
+        'current_stat' => 'Портфолио',
         'token_price' => 'Цена токена в',
         'funds_yields' => 'Доходность фонда',
         'invest' => 'Инвестировать'

@@ -45,7 +45,7 @@ return [
         'button' => 'Join now'
     ],
     'chart' => [
-        'current_stat' => 'Current statistics',
+        'current_stat' => 'Portfolios',
         'token_price' => 'Token price in',
         'funds_yields' => 'Funds yields',
         'invest' => 'Invest Now'
