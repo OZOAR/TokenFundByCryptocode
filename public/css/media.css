@@ -169,4 +169,12 @@
     .chart-element .tab-pane .chart-summary {
         padding-top: 0;
     }
+
+    .variants-list .variant-token p {
+        padding-top: 2em;
+    }
+
+    .chart-element .tab {
+        width: 100%;
+    }
 }
